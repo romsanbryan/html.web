@@ -16,7 +16,9 @@
 .icon-envelope,
 .icon-social-skype,
 .icon-share,
-.icon-social-github {
+.icon-social-github,
+.icon-briefcase,
+.icon-graduation {
     font-family: 'simple-line-icons';
     font-style: normal;
     font-weight: normal;
@@ -70,4 +72,12 @@
 
 .icon-social-github:before {
     content: "\e60c";
+}
+
+.icon-briefcase:before {
+    content: "\e04b";
+}
+
+.icon-graduation:before {
+    content: "\e019";
 }

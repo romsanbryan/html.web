@@ -3,9 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-
     <title>Romsanbryan</title>
-
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon_120x120.png">
@@ -16,17 +14,15 @@
     <link rel="apple-touch-icon-precomposed" href="myAvatar-300x300.png" />
 
     <link rel="stylesheet" href="resources/css/style.css">
-    <link rel='stylesheet' id='porto-bootstrap-css' href='resources/css/porto-boostrap.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='porto-plugins-css' href='resources/css/porto-plugin.css' type='text/css' media='all' />
-    
-    <link rel='stylesheet' id='porto-google-fonts-css' href='resources/css/fonts.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='porto-theme-css' href='resources/css/theme.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='porto-skin-css' href='resources/css/skin.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='resources/css/boostrap.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='resources/css/plugin.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="resources/css/icons.css">
+    <link rel='stylesheet' href='resources/css/fonts.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='resources/css/theme.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='resources/css/skin.css' type='text/css' media='all' />
 
     <script type='text/javascript' src='resources/js/jquery.js'></script>
     <script type='text/javascript' src='resources/js/porto_plugins.js'></script>
-
-    <link rel="stylesheet" href="resources/css/icons.css">
 
 
 </head>
@@ -52,10 +48,10 @@
                                                                         <div class="floating-menu-nav-main collapse">
                                                                             <nav class="wrapper-spy">
                                                                                 <ul class="nav">
-                                                                                    <li class="menu-item"><a href="#about-me" class="text-color-dark background-color-primary"><i class="Simple-Line-Icons-home"></i><span class="font-weight-bold">Sobre mi</span></a></li>
-                                                                                    <li class="menu-item"><a href="#experience" class="text-color-dark background-color-primary"><i class="Simple-Line-Icons-eye"></i><span class="font-weight-bold">Experiencia</span></a></li>
-                                                                                    <li class="menu-item"><a href="#education" class="text-color-dark background-color-primary"><i class="Simple-Line-Icons-briefcase"></i><span class="font-weight-bold">Educacion</span></a></li>
-                                                                                    <li class="menu-item"><a href="#say-hello" class="text-color-dark background-color-primary"><i class="Simple-Line-Icons-envelope-open"></i><span class="font-weight-bold">Contacto</span></a></li>
+                                                                                    <li class="menu-item"><a href="#about-me" class="text-color-dark background-color-primary"><i class="icon-home"></i><span class="font-weight-bold">Sobre mi</span></a></li>
+                                                                                    <li class="menu-item"><a href="#experience" class="text-color-dark background-color-primary"><i class="icon-eye"></i><span class="font-weight-bold">Experiencia</span></a></li>
+                                                                                    <li class="menu-item"><a href="#education" class="text-color-dark background-color-primary"><i class="icon-briefcase"></i><span class="font-weight-bold">Educacion</span></a></li>
+                                                                                    <li class="menu-item"><a href="#say-hello" class="text-color-dark background-color-primary"><i class="icon-envelope-open"></i><span class="font-weight-bold">Contacto</span></a></li>
                                                                                 </ul>
                                                                             </nav>
                                                                         </div>
@@ -88,16 +84,16 @@
                                         <!-- <p><span style="color: #b7b7b7;"><strong><span style="color: #ffffff;">ANTERIOR: </span></strong>Back-end developer<a class="btn btn-tertiary text-uppercase custom-btn-style-1 text-xs ml-sm" href="#experience"
                                                                 data-hash="">Ver más</a></span>
                                                         </p> -->
-                                        <p><span style="color: #b7b7b7;"><span style="color: #ffffff;"><strong>EDUCACION: </strong></span>IES ANTONIO GALA <a class="btn btn-tertiary text-uppercase custom-btn-style-1 text-xs ml-sm" href="#education" data-hash="">Ver más</a></span>
+                                        <!-- <p><span style="color: #b7b7b7;"><span style="color: #ffffff;"><strong>EDUCACION: </strong></span>IES ANTONIO GALA <a class="btn btn-tertiary text-uppercase custom-btn-style-1 text-xs ml-sm" href="#education" data-hash="">Ver más</a></span> -->
                                         </p>
-
+<br />
                                         <a class="porto-sicon-box-link" href="cv.pdf" target='_blank'>
                                             <div class="porto-sicon-box left-icon">
                                                 <div class="porto-sicon-left">
                                                     <div id="porto-icon-162870840636d39d480909" class="porto-just-icon-wrapper  ">
                                                         <div class="align-icon" style="text-align:center;">
                                                             <div class="porto-icon none " style="color:#ffd93e;font-size:22px;display:inline-block;">
-                                                                <i class="Simple-Line-Icons-cloud-download"></i>
+                                                                <i class="icon-cloud-download"></i>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -206,7 +202,7 @@
                                                     <div>
                                                         <div class="porto-ultimate-content-box " style="background-color:#ffffff;box-shadow: px px 3px px #000000 ;padding-top:40px;padding-bottom:30px;padding-left:40px;" data-hover_box_shadow="none" data-bg="#ffffff">
                                                             <div style="color:#ffd93e;font-size:32px;display:inline-block;">
-                                                                <i class="Simple-Line-Icons-graduation"></i>
+                                                                <i class="icon-graduation"></i>
                                                             </div>
 
                                                             <div class="porto-u-heading" style="text-align:left">
@@ -224,7 +220,7 @@
                                                         <div class="porto-ultimate-content-box " style="background-color:#ffffff;box-shadow: px px 3px px #000000 ;
                                                         padding-top:40px;padding-bottom:30px;padding-left:40px;" data-hover_box_shadow="none" data-bg="#ffffff">
                                                             <div style="color:#ffd93e;font-size:32px;display:inline-block;">
-                                                                <i class="Simple-Line-Icons-graduation"></i>
+                                                                <i class="icon-graduation"></i>
                                                             </div>
 
                                                             <div class="porto-u-heading" style="text-align:left">
@@ -242,7 +238,7 @@
                                                         <div class="porto-ultimate-content-box " style="background-color:#ffffff;box-shadow: px px 3px px #000000;
                                                         padding-top:40px;padding-bottom:30px;padding-left:40px;" data-hover_box_shadow="none" data-bg="#ffffff">
                                                             <div style="color:#ffd93e;font-size:32px;display:inline-block;">
-                                                                <i class="Simple-Line-Icons-graduation"></i>
+                                                                <i class="icon-graduation"></i>
                                                             </div>
 
                                                             <div class="porto-u-heading" style="text-align:left">
