@@ -22,8 +22,7 @@
     <link rel='stylesheet' href='resources/css/skin.css' type='text/css' media='all' />
 
     <script type='text/javascript' src='resources/js/jquery.js'></script>
-    <script type='text/javascript' src='resources/js/porto_plugins.js'></script>
-
+    <script type='text/javascript' src='resources/js/plugins.js'></script>
 
 </head>
 
@@ -360,11 +359,13 @@
             </div>
         </div>
     </div>
-    <script type='text/javascript' src='resources/js/composer.js'></script>
 
+    <!-- BRYAN-->
     <script type='text/javascript'>
         var js_porto_vars = {};
     </script>
+
+    <script type='text/javascript' src='resources/js/composer.js'></script>
     <script type='text/javascript' src='resources/js/theme.js'></script>
 
     <script type="text/javascript">
