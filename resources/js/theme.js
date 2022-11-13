@@ -2,43 +2,45 @@ window.theme = {};
 
 (function(theme, $) {
 
+    var js_vars = {};
+
     theme = theme || {};
 
     $.extend(theme, {
 
-        rtl: js_porto_vars.rtl == '1' ? true : false,
+        rtl: js_vars.rtl == '1' ? true : false,
         rtl_browser: $('html').hasClass('browser-rtl'),
 
-        ajax_url: js_porto_vars.ajax_url,
-        request_error: js_porto_vars.request_error,
+        ajax_url: js_vars.ajax_url,
+        request_error: js_vars.request_error,
 
-        change_logo: js_porto_vars.change_logo == '1' ? true : false,
+        change_logo: js_vars.change_logo == '1' ? true : false,
 
-        show_sticky_header: js_porto_vars.show_sticky_header == '1' ? true : false,
-        show_sticky_header_tablet: js_porto_vars.show_sticky_header_tablet == '1' ? true : false,
-        show_sticky_header_mobile: js_porto_vars.show_sticky_header_mobile == '1' ? true : false,
+        show_sticky_header: js_vars.show_sticky_header == '1' ? true : false,
+        show_sticky_header_tablet: js_vars.show_sticky_header_tablet == '1' ? true : false,
+        show_sticky_header_mobile: js_vars.show_sticky_header_mobile == '1' ? true : false,
 
-        category_ajax: js_porto_vars.category_ajax == '1' ? true : false,
-        prdctfltr_ajax: js_porto_vars.prdctfltr_ajax == '1' ? true : false,
-        show_minicart: js_porto_vars.show_minicart == '1' ? true : false,
+        category_ajax: js_vars.category_ajax == '1' ? true : false,
+        prdctfltr_ajax: js_vars.prdctfltr_ajax == '1' ? true : false,
+        show_minicart: js_vars.show_minicart == '1' ? true : false,
 
-        container_width: parseInt(js_porto_vars.container_width),
-        grid_gutter_width: parseInt(js_porto_vars.grid_gutter_width),
-        screen_lg: parseInt(js_porto_vars.screen_lg),
-        slider_loop: js_porto_vars.slider_loop == '1' ? true : false,
-        slider_autoplay: js_porto_vars.slider_autoplay == '1' ? true : false,
-        slider_autoheight: js_porto_vars.slider_autoheight == '1' ? true : false,
-        slider_speed: js_porto_vars.slider_speed ? js_porto_vars.slider_speed : 5000,
-        slider_nav: js_porto_vars.slider_nav == '1' ? true : false,
-        slider_nav_hover: js_porto_vars.slider_nav_hover == '1' ? true : false,
-        slider_margin: js_porto_vars.slider_margin == '1' ? 40 : 0,
-        slider_dots: js_porto_vars.slider_dots == '1' ? true : false,
-        slider_animatein: js_porto_vars.slider_animatein ? js_porto_vars.slider_animatein : '',
-        slider_animateout: js_porto_vars.slider_animateout ? js_porto_vars.slider_animateout : '',
-        product_thumbs_count: js_porto_vars.product_thumbs_count ? js_porto_vars.product_thumbs_count : 4,
-        product_zoom: js_porto_vars.product_zoom == '1' ? true : false,
-        product_zoom_mobile: js_porto_vars.product_zoom_mobile == '1' ? true : false,
-        product_image_popup: js_porto_vars.product_image_popup == '1' ? 'fadeOut' : false,
+        container_width: parseInt(js_vars.container_width),
+        grid_gutter_width: parseInt(js_vars.grid_gutter_width),
+        screen_lg: parseInt(js_vars.screen_lg),
+        slider_loop: js_vars.slider_loop == '1' ? true : false,
+        slider_autoplay: js_vars.slider_autoplay == '1' ? true : false,
+        slider_autoheight: js_vars.slider_autoheight == '1' ? true : false,
+        slider_speed: js_vars.slider_speed ? js_vars.slider_speed : 5000,
+        slider_nav: js_vars.slider_nav == '1' ? true : false,
+        slider_nav_hover: js_vars.slider_nav_hover == '1' ? true : false,
+        slider_margin: js_vars.slider_margin == '1' ? 40 : 0,
+        slider_dots: js_vars.slider_dots == '1' ? true : false,
+        slider_animatein: js_vars.slider_animatein ? js_vars.slider_animatein : '',
+        slider_animateout: js_vars.slider_animateout ? js_vars.slider_animateout : '',
+        product_thumbs_count: js_vars.product_thumbs_count ? js_vars.product_thumbs_count : 4,
+        product_zoom: js_vars.product_zoom == '1' ? true : false,
+        product_zoom_mobile: js_vars.product_zoom_mobile == '1' ? true : false,
+        product_image_popup: js_vars.product_image_popup == '1' ? 'fadeOut' : false,
 
         hoverIntentConfig: {
             sensitivity: 2,
@@ -47,34 +49,33 @@ window.theme = {};
         },
 
         owlConfig: {
-            rtl: js_porto_vars.rtl == '1' ? true : false,
-            loop: js_porto_vars.slider_loop == '1' ? true : false,
-            autoplay: js_porto_vars.slider_autoplay == '1' ? true : false,
-            autoHeight: js_porto_vars.slider_autoheight == '1' ? true : false,
-            autoplayTimeout: js_porto_vars.slider_speed ? js_porto_vars.slider_speed : 5000,
+            rtl: js_vars.rtl == '1' ? true : false,
+            loop: js_vars.slider_loop == '1' ? true : false,
+            autoplay: js_vars.slider_autoplay == '1' ? true : false,
+            autoHeight: js_vars.slider_autoheight == '1' ? true : false,
+            autoplayTimeout: js_vars.slider_speed ? js_vars.slider_speed : 5000,
             autoplayHoverPause: true,
             lazyLoad: true,
-            nav: js_porto_vars.slider_nav == '1' ? true : false,
+            nav: js_vars.slider_nav == '1' ? true : false,
             navText: ["", ""],
-            dots: js_porto_vars.slider_dots == '1' ? true : false,
-            stagePadding: (js_porto_vars.slider_nav_hover != '1' && js_porto_vars.slider_margin == '1') ? 40 : 0,
-            animateOut: js_porto_vars.slider_animateout ? js_porto_vars.slider_animateout : '',
-            animateIn: js_porto_vars.slider_animatein ? js_porto_vars.slider_animatein : ''
+            dots: js_vars.slider_dots == '1' ? true : false,
+            stagePadding: (js_vars.slider_nav_hover != '1' && js_vars.slider_margin == '1') ? 40 : 0,
+            animateOut: js_vars.slider_animateout ? js_vars.slider_animateout : '',
+            animateIn: js_vars.slider_animatein ? js_vars.slider_animatein : ''
         },
 
         mfpConfig: {
-            tClose: js_porto_vars.popup_close,
-            tLoading: '<div class="porto-ajax-loading"></div>',
+            tClose: js_vars.popup_close,
             gallery: {
-                tPrev: js_porto_vars.popup_prev,
-                tNext: js_porto_vars.popup_next,
-                tCounter: js_porto_vars.mfp_counter
+                tPrev: js_vars.popup_prev,
+                tNext: js_vars.popup_next,
+                tCounter: js_vars.mfp_counter
             },
             image: {
-                tError: js_porto_vars.mfp_img_error
+                tError: js_vars.mfp_img_error
             },
             ajax: {
-                tError: js_porto_vars.mfp_ajax_error
+                tError: js_vars.mfp_ajax_error
             },
             callbacks: {
                 open: function() {
@@ -86,15 +87,11 @@ window.theme = {};
                     var that = $(this._lastFocusedEl);
                     if ((that.parents('.portfolios-lightbox').hasClass('with-thumbs')) && $(document).width() >= 1024) {
 
-                        var portfolio_lightbox_thumbnails_base = that.parents('.portfolios-lightbox.with-thumbs').find('.porto-portfolios-lighbox-thumbnails').clone(),
-                            magnificPopup = $.magnificPopup.instance;
+
 
                         $('body').prepend(portfolio_lightbox_thumbnails_base);
 
-                        var $portfolios_lightbox_thumbnails = $('body > .porto-portfolios-lighbox-thumbnails'),
-                            $portfolios_lightbox_thumbnails_carousel = $portfolios_lightbox_thumbnails.children('.owl-carousel');
-                        $portfolios_lightbox_thumbnails_carousel.themeCarousel($portfolios_lightbox_thumbnails_carousel.data('plugin-options'));
-                        $portfolios_lightbox_thumbnails_carousel.trigger('refresh.owl.carousel');
+
 
                         var $carousel_items_wrapper = $portfolios_lightbox_thumbnails_carousel.find('.owl-stage');
 
@@ -138,10 +135,7 @@ window.theme = {};
                             $this.css({ 'width': w });
                         }, 0);
                     });
-                    var that = $(this._lastFocusedEl);
-                    if ((that.parents('.portfolios-lightbox').hasClass('with-thumbs')) && $(document).width() >= 1024) {
-                        $(' body > .porto-portfolios-lighbox-thumbnails').remove();
-                    }
+
                 }
             }
         },
@@ -554,7 +548,7 @@ window.theme = {};
             activeMenuItem: function() {
                 var self = this;
                 var scroll_pos = $(window).scrollTop();
-                var $menu_items = $('.menu-item > a[href*="#"], .porto-sticky-nav .nav > li > a[href*="#"]');
+                var $menu_items = $('.menu-item > a[href*="#"], .sticky-nav .nav > li > a[href*="#"]');
                 if ($menu_items.length) {
                     $menu_items.each(function() {
                         var $this = $(this);
@@ -593,7 +587,7 @@ window.theme = {};
 
             events: function() {
                 var self = this;
-                $('.menu-item > a[href*="#"], .porto-sticky-nav .nav > li > a[href*="#"], a[href*="#"].hash-scroll, .hash-scroll-wrap a[href*="#"]').on('click', function(e) {
+                $('.menu-item > a[href*="#"], .sticky-nav .nav > li > a[href*="#"], a[href*="#"].hash-scroll, .hash-scroll-wrap a[href*="#"]').on('click', function(e) {
                     e.preventDefault();
                     var $this = $(this);
                     var href = $this.attr('href');
@@ -641,7 +635,7 @@ window.theme = {};
 }).apply(this, [window.theme, jQuery]);
 
 
-function porto_init() {
+function init() {
     (function($) {
         'use strict';
         $('.thumb-gallery-thumbs').each(function() {
@@ -694,8 +688,8 @@ function porto_init() {
 (function(theme, $) {
     'use strict';
     $(document).ready(function() {
-        // Init Porto Theme
-        porto_init();
+        // Init Theme
+        init();
         // Sticky Header
         if (typeof theme.StickyHeader !== 'undefined') {
             theme.StickyHeader.initialize();

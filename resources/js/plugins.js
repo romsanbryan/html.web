@@ -1,47 +1,8 @@
-/*
- * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
- *
- * Uses the built in easing capabilities added In jQuery 1.1
- * to offer multiple easing options
- *
- * TERMS OF USE - jQuery Easing
- * 
- * Open source under the BSD License. 
- * 
- * Copyright Â© 2008 George McGinley Smith
- * All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without modification, 
- * are permitted provided that the following conditions are met:
- * 
- * Redistributions of source code must retain the above copyright notice, this list of 
- * conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright notice, this list 
- * of conditions and the following disclaimer in the documentation and/or other materials 
- * provided with the distribution.
- * 
- * Neither the name of the author nor the names of contributors may be used to endorse 
- * or promote products derived from this software without specific prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
- * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
- * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
- * OF THE POSSIBILITY OF SUCH DAMAGE. 
- *
- */
-
-// t: current time, b: begInnIng value, c: change In value, d: duration
 jQuery.easing['jswing'] = jQuery.easing['swing'];
 
 jQuery.extend(jQuery.easing, {
     def: 'easeOutQuad',
     swing: function(x, t, b, c, d) {
-        //alert(jQuery.easing.default);
         return jQuery.easing[jQuery.easing.def](x, t, b, c, d);
     },
     easeInQuad: function(x, t, b, c, d) {
@@ -179,67 +140,11 @@ jQuery.extend(jQuery.easing, {
     }
 });
 
-/*
- *
- * TERMS OF USE - EASING EQUATIONS
- * 
- * Open source under the BSD License. 
- * 
- * Copyright Â© 2001 Robert Penner
- * All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without modification, 
- * are permitted provided that the following conditions are met:
- * 
- * Redistributions of source code must retain the above copyright notice, this list of 
- * conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright notice, this list 
- * of conditions and the following disclaimer in the documentation and/or other materials 
- * provided with the distribution.
- * 
- * Neither the name of the author nor the names of contributors may be used to endorse 
- * or promote products derived from this software without specific prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
- * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
- * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
- * OF THE POSSIBILITY OF SUCH DAMAGE. 
- *
- */
 
-/**
- * Project: Bootstrap Hover Dropdown
- * Author: Cameron Spear
- * Contributors: Mattia Larentis
- *
- * Dependencies: Bootstrap's Dropdown plugin, jQuery
- *
- * A simple plugin to enable Bootstrap dropdowns to active on hover and provide a nice user experience.
- *
- * License: MIT
- *
- * http://cameronspear.com/blog/bootstrap-dropdown-on-hover-plugin/
- */
-;
 (function($, window, undefined) {
-    // outside the scope of the jQuery plugin to
-    // keep track of all dropdowns
     var $allDropdowns = $();
-
-    // if instantlyCloseOthers is true, then it will instantly
-    // shut other nav items when a new one is hovered over
     $.fn.dropdownHover = function(options) {
-        // don't do anything if touch is supported
-        // (plugin causes some issues on mobile)
-        if ('ontouchstart' in document) return this; // don't want to affect chaining
-
-        // the element we really care about
-        // is the dropdown-toggle's parent
+        if ('ontouchstart' in document) return this;
         $allDropdowns = $allDropdowns.add(this.parent());
 
         return this.each(function() {
@@ -255,16 +160,11 @@ jQuery.extend(jQuery.easing, {
                 },
                 showEvent = 'show.bs.dropdown',
                 hideEvent = 'hide.bs.dropdown',
-                // shownEvent  = 'shown.bs.dropdown',
-                // hiddenEvent = 'hidden.bs.dropdown',
                 settings = $.extend(true, {}, defaults, options, data),
                 timeout;
 
             $parent.hover(function(event) {
-                // so a neighbor can't open the dropdown
                 if (!$parent.hasClass('open') && !$this.is(event.target)) {
-                    // stop this event, stop executing any code 
-                    // in this callback but continue to propagate
                     return true;
                 }
 
@@ -280,11 +180,9 @@ jQuery.extend(jQuery.easing, {
                 timeout = window.setTimeout(function() {
                     $parent.removeClass('open');
                     $this.trigger(hideEvent);
-                    //}, settings.delay);
                 }, 200);
             });
 
-            // this helps with button groups!
             $this.hover(function() {
                 $allDropdowns.find(':focus').blur();
 
@@ -296,14 +194,12 @@ jQuery.extend(jQuery.easing, {
                 $this.trigger(showEvent);
             });
 
-            // handle submenus
             $parent.find('.dropdown-submenu').each(function() {
                 var $this = $(this);
                 var subTimeout;
                 $this.hover(function() {
                     window.clearTimeout(subTimeout);
                     $this.children('.dropdown-menu').show();
-                    // always close submenu siblings instantly
                     $this.siblings().children('.dropdown-menu').hide();
                 }, function() {
                     var $submenu = $this.children('.dropdown-menu');
@@ -316,149 +212,31 @@ jQuery.extend(jQuery.easing, {
     };
 
     $(document).ready(function() {
-        // apply dropdownHover to all elements with the data-hover="dropdown" attribute
         $('[data-hover="dropdown"]').dropdownHover();
     });
 })(jQuery, this);
 
 
-/**
- * Owl Carousel v2.1.4
- * Copyright 2013-2016 David Deutsch
- * Licensed under MIT (https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE)
- */
-/**
- * Owl carousel
- * @version 2.1.0
- * @author Bartosz Wojciechowski
- * @author David Deutsch
- * @license The MIT License (MIT)
- * @todo Lazy Load Icon
- * @todo prevent animationend bubling
- * @todo itemsScaleUp
- * @todo Test Zepto
- * @todo stagePadding calculate wrong active classes
- */
-;
 (function($, window, document, undefined) {
-
-    /**
-     * Creates a carousel.
-     * @class The Owl Carousel.
-     * @public
-     * @param {HTMLElement|jQuery} element - The element to create the carousel for.
-     * @param {Object} [options] - The options
-     */
     function Owl(element, options) {
 
-        /**
-         * Current settings for the carousel.
-         * @public
-         */
         this.settings = null;
-
-        /**
-         * Current options set by the caller including defaults.
-         * @public
-         */
         this.options = $.extend({}, Owl.Defaults, options);
-
-        /**
-         * Plugin element.
-         * @public
-         */
         this.$element = $(element);
-
-        /**
-         * Proxied event handlers.
-         * @protected
-         */
         this._handlers = {};
-
-        /**
-         * References to the running plugins of this carousel.
-         * @protected
-         */
         this._plugins = {};
-
-        /**
-         * Currently suppressed events to prevent them from beeing retriggered.
-         * @protected
-         */
         this._supress = {};
-
-        /**
-         * Absolute current position.
-         * @protected
-         */
         this._current = null;
-
-        /**
-         * Animation speed in milliseconds.
-         * @protected
-         */
         this._speed = null;
-
-        /**
-         * Coordinates of all items in pixel.
-         * @todo The name of this member is missleading.
-         * @protected
-         */
         this._coordinates = [];
-
-        /**
-         * Current breakpoint.
-         * @todo Real media queries would be nice.
-         * @protected
-         */
         this._breakpoint = null;
-
-        /**
-         * Current width of the plugin element.
-         */
         this._width = null;
-
-        /**
-         * All real items.
-         * @protected
-         */
         this._items = [];
-
-        /**
-         * All cloned items.
-         * @protected
-         */
         this._clones = [];
-
-        /**
-         * Merge values of all items.
-         * @todo Maybe this could be part of a plugin.
-         * @protected
-         */
         this._mergers = [];
-
-        /**
-         * Widths of all items.
-         */
         this._widths = [];
-
-        /**
-         * Invalidated parts within the update process.
-         * @protected
-         */
         this._invalidated = {};
-
-        /**
-         * Ordered list of workers for the update process.
-         * @protected
-         */
         this._pipe = [];
-
-        /**
-         * Current state information for the drag operation.
-         * @todo #261
-         * @protected
-         */
         this._drag = {
             time: null,
             target: null,
@@ -469,12 +247,6 @@ jQuery.extend(jQuery.easing, {
             },
             direction: null
         };
-
-        /**
-         * Current state information and their tags.
-         * @type {Object}
-         * @protected
-         */
         this._states = {
             current: {},
             tags: {
@@ -503,48 +275,33 @@ jQuery.extend(jQuery.easing, {
         this.initialize();
     }
 
-    /**
-     * Default options for the carousel.
-     * @public
-     */
-
     Owl.Defaults = {
         items: 3,
         loop: false,
         center: false,
         rewind: false,
-
         mouseDrag: true,
         touchDrag: true,
         pullDrag: true,
         freeDrag: false,
-
         margin: 0,
         stagePadding: 0,
-
         merge: false,
         mergeFit: true,
         autoWidth: false,
-
         startPosition: 0,
         rtl: false,
-
         smartSpeed: 250,
         fluidSpeed: false,
         dragEndSpeed: false,
-
         responsive: {},
         responsiveRefreshRate: 200,
         responsiveBaseElement: window,
-
         fallbackEasing: 'swing',
-
         info: false,
-
         nestedItemSelector: false,
         itemElement: 'div',
         stageElement: 'div',
-
         refreshClass: 'owl-refresh',
         loadedClass: 'owl-loaded',
         loadingClass: 'owl-loading',
@@ -557,38 +314,19 @@ jQuery.extend(jQuery.easing, {
         grabClass: 'owl-grab'
     };
 
-    /**
-     * Enumeration for width.
-     * @public
-     * @readonly
-     * @enum {String}
-     */
     Owl.Width = {
         Default: 'default',
         Inner: 'inner',
         Outer: 'outer'
     };
 
-    /**
-     * Enumeration for types.
-     * @public
-     * @readonly
-     * @enum {String}
-     */
     Owl.Type = {
         Event: 'event',
         State: 'state'
     };
 
-    /**
-     * Contains all registered plugins.
-     * @public
-     */
     Owl.Plugins = {};
 
-    /**
-     * List of workers involved in the update process.
-     */
     Owl.Workers = [{
         filter: ['width', 'settings'],
         run: function() {
@@ -758,10 +496,6 @@ jQuery.extend(jQuery.easing, {
         }
     }];
 
-    /**
-     * Initializes the carousel.
-     * @protected
-     */
     Owl.prototype.initialize = function() {
         this.enter('initializing');
         this.trigger('initialize');
@@ -777,41 +511,25 @@ jQuery.extend(jQuery.easing, {
         }
 
         this.$element.addClass(this.options.loadingClass);
-        // create stage
         this.$stage = $('<' + this.settings.stageElement + ' class="' + this.settings.stageClass + '"/>')
             .wrap('<div class="' + this.settings.stageOuterClass + '"/>');
 
-        // append stage
         this.$element.append(this.$stage.parent());
 
-        // append content
         this.replace(this.$element.children().not(this.$stage.parent()));
 
-        // check visibility
         if (this.$element.is(':visible')) {
-            // update view
             this.refresh();
         } else {
-            // invalidate width
             this.invalidate('width');
         }
 
-        this.$element
-            .removeClass(this.options.loadingClass)
-            .addClass(this.options.loadedClass);
-
-        // register event handlers
+        this.$element.removeClass(this.options.loadingClass).addClass(this.options.loadedClass);
         this.registerEventHandlers();
         this.leave('initializing');
         this.trigger('initialized');
     };
 
-    /**
-     * Setups the current settings.
-     * @todo Remove responsive classes. Why should adaptive designs be brought into IE8?
-     * @todo Support for media queries by using `matchMedia` would be nice.
-     * @public
-     */
     Owl.prototype.setup = function() {
         var viewport = this.viewport(),
             overwrites = this.options.responsive,
@@ -828,10 +546,8 @@ jQuery.extend(jQuery.easing, {
             });
 
             settings = $.extend({}, this.options, overwrites[match]);
-
             delete settings.responsive;
 
-            // responsive class
             if (settings.responsiveClass) {
                 this.$element.attr('class',
                     this.$element.attr('class').replace(new RegExp('(' + this.options.responsiveClass + '-)\\S+\\s', 'g'), '$1' + match)
@@ -848,10 +564,6 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    /**
-     * Updates option logic if necessery.
-     * @protected
-     */
     Owl.prototype.optionsLogic = function() {
         if (this.settings.autoWidth) {
             this.settings.stagePadding = false;
@@ -859,12 +571,6 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    /**
-     * Prepares an item before add.
-     * @todo Rename event parameter `content` to `item`.
-     * @protected
-     * @returns {jQuery|HTMLElement} - The item container.
-     */
     Owl.prototype.prepare = function(item) {
         var event = this.trigger('prepare', { content: item });
 
@@ -875,11 +581,6 @@ jQuery.extend(jQuery.easing, {
         this.trigger('prepared', { content: event.data });
         return event.data;
     };
-
-    /**
-     * Updates the view.
-     * @public
-     */
     Owl.prototype.update = function() {
         var i = 0,
             n = this._pipe.length,
@@ -897,12 +598,6 @@ jQuery.extend(jQuery.easing, {
         !this.is('valid') && this.enter('valid');
     };
 
-    /**
-     * Gets the width of the view.
-     * @public
-     * @param {Owl.Width} [dimension=Owl.Width.Default] - The dimension to return.
-     * @returns {Number} - The width of the view in pixel.
-     */
     Owl.prototype.width = function(dimension) {
         dimension = dimension || Owl.Width.Default;
 
@@ -915,10 +610,6 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    /**
-     * Refreshes the carousel primarily for adaptive purposes.
-     * @public
-     */
     Owl.prototype.refresh = function() {
         this.enter('refreshing');
         this.trigger('refresh');
@@ -931,19 +622,11 @@ jQuery.extend(jQuery.easing, {
         this.trigger('refreshed');
     };
 
-    /**
-     * Checks window `resize` event.
-     * @protected
-     */
     Owl.prototype.onThrottledResize = function() {
         window.clearTimeout(this.resizeTimer);
         this.resizeTimer = window.setTimeout(this._handlers.onResize, this.settings.responsiveRefreshRate);
     };
 
-    /**
-     * Checks window `resize` event.
-     * @protected
-     */
     Owl.prototype.onResize = function() {
 
         if (!this._items.length) {
@@ -971,12 +654,6 @@ jQuery.extend(jQuery.easing, {
         this.trigger('resized');
     };
 
-    /**
-     * Registers event handlers.
-     * @todo Check `msPointerEnabled`
-     * @todo #261
-     * @protected
-     */
     Owl.prototype.registerEventHandlers = function() {
 
         if ($.support.transition) {
@@ -999,13 +676,6 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    /**
-     * Handles `touchstart` and `mousedown` events.
-     * @todo Horizontal swipe threshold as option
-     * @todo #261
-     * @protected
-     * @param {Event} event - The event arguments.
-     */
     Owl.prototype.onDragStart = function(event) {
 
         var stage = null;
@@ -1056,12 +726,6 @@ jQuery.extend(jQuery.easing, {
         }, this));
     };
 
-    /**
-     * Handles the `touchmove` and `mousemove` events.
-     * @todo #261
-     * @protected
-     * @param {Event} event - The event arguments.
-     */
     Owl.prototype.onDragMove = function(event) {
         var minimum = null,
             maximum = null,
@@ -1087,13 +751,6 @@ jQuery.extend(jQuery.easing, {
         this.animate(stage.x);
     };
 
-    /**
-     * Handles the `touchend` and `mouseup` events.
-     * @todo #261
-     * @todo Threshold for click event
-     * @protected
-     * @param {Event} event - The event arguments.
-     */
     Owl.prototype.onDragEnd = function(event) {
         var delta = this.difference(this._drag.pointer, this.pointer(event)),
             stage = this._drag.stage.current,
@@ -1122,14 +779,6 @@ jQuery.extend(jQuery.easing, {
         this.trigger('dragged');
     };
 
-    /**
-     * Gets absolute position of the closest item for a coordinate.
-     * @todo Setting `freeDrag` makes `closest` not reusable. See #165.
-     * @protected
-     * @param {Number} coordinate - The coordinate in pixel.
-     * @param {String} direction - The direction to check for the closest item. Ether `left` or `right`.
-     * @return {Number} - The absolute position of the closest item.
-     */
     Owl.prototype.closest = function(coordinate, direction) {
 
         var position = -1,
@@ -1138,13 +787,9 @@ jQuery.extend(jQuery.easing, {
             coordinates = this.coordinates();
 
         if (!this.settings.freeDrag) {
-            // check closest item
             $.each(coordinates, $.proxy(function(index, value) {
-                // on a left pull, check on current index
                 if (direction === 'left' && coordinate > value - pull && coordinate < value + pull) {
                     position = index;
-                    // on a right pull, check on previous index
-                    // to do so, subtract width from value and set position = index + 1
                 } else if (direction === 'right' && coordinate > value - width - pull && coordinate < value - width + pull) {
                     position = index + 1;
                 } else if (this.op(coordinate, '<', value) &&
@@ -1156,7 +801,6 @@ jQuery.extend(jQuery.easing, {
         }
 
         if (!this.settings.loop) {
-            // non loop boundries
             if (this.op(coordinate, '>', coordinates[this.minimum()])) {
                 position = coordinate = this.minimum();
             } else if (this.op(coordinate, '<', coordinates[this.maximum()])) {
@@ -1167,12 +811,6 @@ jQuery.extend(jQuery.easing, {
         return position;
     };
 
-    /**
-     * Animates the stage.
-     * @todo #270
-     * @public
-     * @param {Number} coordinate - The coordinate in pixels.
-     */
     Owl.prototype.animate = function(coordinate) {
 
         var animate = this.speed() > 0;
@@ -1199,28 +837,14 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    /**
-     * Checks whether the carousel is in a specific state or not.
-     * @param {String} state - The state to check.
-     * @returns {Boolean} - The flag which indicates if the carousel is busy.
-     */
-
     Owl.prototype.is = function(state) {
         return this._states.current[state] && this._states.current[state] > 0;
     };
 
-    /**
-     * Sets the absolute position of the current item.
-     * @public
-     * @param {Number} [position] - The new absolute position or nothing to leave it unchanged.
-     * @returns {Number} - The absolute position of the current item.
-     */
     Owl.prototype.current = function(position) {
-
         if (position === undefined) {
             return this._current;
         }
-
         if (this._items.length === 0) {
             return undefined;
         }
@@ -1240,11 +864,6 @@ jQuery.extend(jQuery.easing, {
         return this._current;
     };
 
-    /**
-     * Invalidates the given part of the update routine.
-     * @param {String} [part] - The part to invalidate.
-     * @returns {Array.<String>} - The invalidated parts.
-     */
     Owl.prototype.invalidate = function(part) {
 
         if ($.type(part) === 'string') {
@@ -1255,11 +874,6 @@ jQuery.extend(jQuery.easing, {
         return $.map(this._invalidated, function(v, i) { return i });
     };
 
-    /**
-     * Resets the absolute position of the current item.
-     * @public
-     * @param {Number} position - The absolute position of the new item.
-     */
     Owl.prototype.reset = function(position) {
         position = this.normalize(position);
         if (position === undefined) {
@@ -1273,13 +887,6 @@ jQuery.extend(jQuery.easing, {
         this.release(['translate', 'translated']);
     };
 
-    /**
-     * Normalizes an absolute or a relative position of an item.
-     * @public
-     * @param {Number} position - The absolute or relative position to normalize.
-     * @param {Boolean} [relative=false] - Whether the given position is relative or not.
-     * @returns {Number} - The normalized position.
-     */
     Owl.prototype.normalize = function(position, relative) {
 
         var n = this._items.length,
@@ -1294,23 +901,11 @@ jQuery.extend(jQuery.easing, {
         return position;
     };
 
-    /**
-     * Converts an absolute position of an item into a relative one.
-     * @public
-     * @param {Number} position - The absolute position to convert.
-     * @returns {Number} - The converted position.
-     */
     Owl.prototype.relative = function(position) {
         position -= this._clones.length / 2;
         return this.normalize(position, true);
     };
 
-    /**
-     * Gets the maximum position for the current item.
-     * @public
-     * @param {Boolean} [relative=false] - Whether to return an absolute position or a relative position.
-     * @returns {Number}
-     */
     Owl.prototype.maximum = function(relative) {
 
         var settings = this.settings,
@@ -1322,7 +917,7 @@ jQuery.extend(jQuery.easing, {
         if (settings.loop) {
             maximum = this._clones.length / 2 + this._items.length - 1;
         } else if (settings.autoWidth || settings.merge) {
-            // binary search
+
             while (maximum - i > 1) {
                 Math.abs(this._coordinates[j = maximum + i >> 1]) < boundary ?
                     i = j : maximum = j;
@@ -1340,22 +935,10 @@ jQuery.extend(jQuery.easing, {
         return Math.max(maximum, 0);
     };
 
-    /**
-     * Gets the minimum position for the current item.
-     * @public
-     * @param {Boolean} [relative=false] - Whether to return an absolute position or a relative position.
-     * @returns {Number}
-     */
     Owl.prototype.minimum = function(relative) {
         return relative ? 0 : this._clones.length / 2;
     };
 
-    /**
-     * Gets an item at the specified relative position.
-     * @public
-     * @param {Number} [position] - The relative position of the item.
-     * @return {jQuery|Array.<jQuery>} - The item at the given position or all items if no position was given.
-     */
     Owl.prototype.items = function(position) {
         if (position === undefined) {
             return this._items.slice();
@@ -1365,12 +948,6 @@ jQuery.extend(jQuery.easing, {
         return this._items[position];
     };
 
-    /**
-     * Gets an item at the specified relative position.
-     * @public
-     * @param {Number} [position] - The relative position of the item.
-     * @return {jQuery|Array.<jQuery>} - The item at the given position or all items if no position was given.
-     */
     Owl.prototype.mergers = function(position) {
         if (position === undefined) {
             return this._mergers.slice();
@@ -1380,12 +957,6 @@ jQuery.extend(jQuery.easing, {
         return this._mergers[position];
     };
 
-    /**
-     * Gets the absolute positions of clones for an item.
-     * @public
-     * @param {Number} [position] - The relative position of the item.
-     * @returns {Array.<Number>} - The absolute positions of clones for the item or all if no position was given.
-     */
     Owl.prototype.clones = function(position) {
         var odd = this._clones.length / 2,
             even = odd + this._items.length,
@@ -1398,12 +969,6 @@ jQuery.extend(jQuery.easing, {
         return $.map(this._clones, function(v, i) { return v === position ? map(i) : null });
     };
 
-    /**
-     * Sets the current animation speed.
-     * @public
-     * @param {Number} [speed] - The animation speed in milliseconds or nothing to leave it unchanged.
-     * @returns {Number} - The current animation speed in milliseconds.
-     */
     Owl.prototype.speed = function(speed) {
         if (speed !== undefined) {
             this._speed = speed;
@@ -1412,13 +977,6 @@ jQuery.extend(jQuery.easing, {
         return this._speed;
     };
 
-    /**
-     * Gets the coordinate of an item.
-     * @todo The name of this method is missleanding.
-     * @public
-     * @param {Number} position - The absolute position of the item within `minimum()` and `maximum()`.
-     * @returns {Number|Array.<Number>} - The coordinate of the item in pixel or all coordinates.
-     */
     Owl.prototype.coordinates = function(position) {
         var multiplier = 1,
             newPosition = position - 1,
@@ -1445,15 +1003,6 @@ jQuery.extend(jQuery.easing, {
         coordinate = Math.ceil(coordinate);
         return coordinate;
     };
-
-    /**
-     * Calculates the speed for a translation.
-     * @protected
-     * @param {Number} from - The absolute position of the start item.
-     * @param {Number} to - The absolute position of the target item.
-     * @param {Number} [factor=undefined] - The time factor in milliseconds.
-     * @returns {Number} - The time in milliseconds for the translation.
-     */
     Owl.prototype.duration = function(from, to, factor) {
         if (factor === 0) {
             return 0;
@@ -1461,12 +1010,6 @@ jQuery.extend(jQuery.easing, {
         return Math.min(Math.max(Math.abs(to - from), 1), 6) * Math.abs((factor || this.settings.smartSpeed));
     };
 
-    /**
-     * Slides to the specified item.
-     * @public
-     * @param {Number} position - The position of the item.
-     * @param {Number} [speed] - The time in milliseconds for the transition.
-     */
     Owl.prototype.to = function(position, speed) {
         var current = this.current(),
             revert = null,
@@ -1503,36 +1046,21 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    /**
-     * Slides to the next item.
-     * @public
-     * @param {Number} [speed] - The time in milliseconds for the transition.
-     */
     Owl.prototype.next = function(speed) {
         speed = speed || false;
         this.to(this.relative(this.current()) + 1, speed);
     };
 
-    /**
-     * Slides to the previous item.
-     * @public
-     * @param {Number} [speed] - The time in milliseconds for the transition.
-     */
     Owl.prototype.prev = function(speed) {
         speed = speed || false;
         this.to(this.relative(this.current()) - 1, speed);
     };
 
-    /**
-     * Handles the end of an animation.
-     * @protected
-     * @param {Event} event - The event arguments.
-     */
     Owl.prototype.onTransitionEnd = function(event) {
-        // if css2 animation then event object is undefined
+
         if (event !== undefined) {
             event.stopPropagation();
-            // Catch only owl-stage transitionEnd event
+
             if ((event.target || event.srcElement || event.originalTarget) !== this.$stage.get(0)) {
                 return false;
             }
@@ -1542,11 +1070,6 @@ jQuery.extend(jQuery.easing, {
         this.trigger('translated');
     };
 
-    /**
-     * Gets viewport width.
-     * @protected
-     * @return {Number} - The width in pixel.
-     */
     Owl.prototype.viewport = function() {
         var width;
         if (this.options.responsiveBaseElement !== window) {
@@ -1562,11 +1085,6 @@ jQuery.extend(jQuery.easing, {
         return width;
     };
 
-    /**
-     * Replaces the current content.
-     * @public
-     * @param {HTMLElement|jQuery|String} content - The new content.
-     */
     Owl.prototype.replace = function(content) {
         this.$stage.empty();
         this._items = [];
@@ -1590,13 +1108,6 @@ jQuery.extend(jQuery.easing, {
         this.invalidate('items');
     };
 
-    /**
-     * Adds an item.
-     * @todo Use `item` instead of `content` for the event arguments.
-     * @public
-     * @param {HTMLElement|jQuery|String} content - The item content to add.
-     * @param {Number} [position] - The relative position at which to insert the item otherwise the item will be added to the end.
-     */
     Owl.prototype.add = function(content, position) {
         var current = this.relative(this._current);
         position = position === undefined ? this._items.length : this.normalize(position, true);
@@ -1619,12 +1130,6 @@ jQuery.extend(jQuery.easing, {
         this.trigger('added', { content: content, position: position });
     };
 
-    /**
-     * Removes an item by its position.
-     * @todo Use `item` instead of `content` for the event arguments.
-     * @public
-     * @param {Number} position - The relative position of the item to remove.
-     */
     Owl.prototype.remove = function(position) {
         position = this.normalize(position, true);
         if (position === undefined) {
@@ -1639,11 +1144,6 @@ jQuery.extend(jQuery.easing, {
         this.trigger('removed', { content: null, position: position });
     };
 
-    /**
-     * Preloads images with auto width.
-     * @todo Replace by a more generic approach
-     * @protected
-     */
     Owl.prototype.preloadAutoWidthImages = function(images) {
         images.each($.proxy(function(i, element) {
             this.enter('pre-loading');
@@ -1657,10 +1157,6 @@ jQuery.extend(jQuery.easing, {
         }, this));
     };
 
-    /**
-     * Destroys the carousel.
-     * @public
-     */
     Owl.prototype.destroy = function() {
         this.$element.off('.owl.core');
         this.$stage.off('.owl.core');
@@ -1689,13 +1185,7 @@ jQuery.extend(jQuery.easing, {
             .removeData('owl.carousel');
     };
 
-    /**
-     * Operators to calculate right-to-left and left-to-right.
-     * @protected
-     * @param {Number} [a] - The left side operand.
-     * @param {String} [o] - The operator.
-     * @param {Number} [b] - The right side operand.
-     */
+
     Owl.prototype.op = function(a, o, b) {
         var rtl = this.settings.rtl;
         switch (o) {
@@ -1712,14 +1202,7 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    /**
-     * Attaches to an internal event.
-     * @protected
-     * @param {HTMLElement} element - The event source.
-     * @param {String} event - The event name.
-     * @param {Function} listener - The event handler to attach.
-     * @param {Boolean} capture - Wether the event should be handled at the capturing phase or not.
-     */
+
     Owl.prototype.on = function(element, event, listener, capture) {
         if (element.addEventListener) {
             element.addEventListener(event, listener, capture);
@@ -1728,14 +1211,6 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    /**
-     * Detaches from an internal event.
-     * @protected
-     * @param {HTMLElement} element - The event source.
-     * @param {String} event - The event name.
-     * @param {Function} listener - The attached event handler to detach.
-     * @param {Boolean} capture - Wether the attached event handler was registered as a capturing listener or not.
-     */
     Owl.prototype.off = function(element, event, listener, capture) {
         if (element.removeEventListener) {
             element.removeEventListener(event, listener, capture);
@@ -1744,17 +1219,6 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    /**
-     * Triggers a public event.
-     * @todo Remove `status`, `relatedTarget` should be used instead.
-     * @protected
-     * @param {String} name - The event name.
-     * @param {*} [data=null] - The event data.
-     * @param {String} [namespace=carousel] - The event namespace.
-     * @param {String} [state] - The state which is associated with the event.
-     * @param {Boolean} [enter=false] - Indicates if the call enters the specified state or not.
-     * @returns {Event} - The event arguments.
-     */
     Owl.prototype.trigger = function(name, data, namespace, state, enter) {
         var status = {
                 item: { count: this._items.length, index: this.current() }
@@ -1784,10 +1248,6 @@ jQuery.extend(jQuery.easing, {
         return event;
     };
 
-    /**
-     * Enters a state.
-     * @param name - The state name.
-     */
     Owl.prototype.enter = function(name) {
         $.each([name].concat(this._states.tags[name] || []), $.proxy(function(i, name) {
             if (this._states.current[name] === undefined) {
@@ -1797,21 +1257,12 @@ jQuery.extend(jQuery.easing, {
         }, this));
     };
 
-    /**
-     * Leaves a state.
-     * @param name - The state name.
-     */
     Owl.prototype.leave = function(name) {
         $.each([name].concat(this._states.tags[name] || []), $.proxy(function(i, name) {
             this._states.current[name]--;
         }, this));
     };
 
-    /**
-     * Registers an event or state.
-     * @public
-     * @param {Object} object - The event or state to register.
-     */
     Owl.prototype.register = function(object) {
         if (object.type === Owl.Type.Event) {
             if (!$.event.special[object.name]) {
@@ -1842,35 +1293,18 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    /**
-     * Suppresses events.
-     * @protected
-     * @param {Array.<String>} events - The events to suppress.
-     */
     Owl.prototype.suppress = function(events) {
         $.each(events, $.proxy(function(index, event) {
             this._supress[event] = true;
         }, this));
     };
 
-    /**
-     * Releases suppressed events.
-     * @protected
-     * @param {Array.<String>} events - The events to release.
-     */
     Owl.prototype.release = function(events) {
         $.each(events, $.proxy(function(index, event) {
             delete this._supress[event];
         }, this));
     };
 
-    /**
-     * Gets unified pointer coordinates from event.
-     * @todo #261
-     * @protected
-     * @param {Event} - The `mousedown` or `touchstart` event.
-     * @returns {Object} - Contains `x` and `y` coordinates of current pointer position.
-     */
     Owl.prototype.pointer = function(event) {
         var result = { x: null, y: null };
         event = event.originalEvent || event || window.event;
@@ -1888,24 +1322,10 @@ jQuery.extend(jQuery.easing, {
         return result;
     };
 
-    /**
-     * Determines if the input is a Number or something that can be coerced to a Number
-     * @protected
-     * @param {Number|String|Object|Array|Boolean|RegExp|Function|Symbol} - The input to be tested
-     * @returns {Boolean} - An indication if the input is a Number or can be coerced to a Number
-     */
     Owl.prototype.isNumeric = function(number) {
         return !isNaN(parseFloat(number));
     };
 
-    /**
-     * Gets the difference of two vectors.
-     * @todo #261
-     * @protected
-     * @param {Object} - The first vector.
-     * @param {Object} - The second vector.
-     * @returns {Object} - The difference.
-     */
     Owl.prototype.difference = function(first, second) {
         return {
             x: first.x - second.x,
@@ -1913,11 +1333,6 @@ jQuery.extend(jQuery.easing, {
         };
     };
 
-    /**
-     * The jQuery Plugin for the Owl Carousel
-     * @todo Navigation plugin `next` and `prev`
-     * @public
-     */
     $.fn.owlCarousel = function(option) {
         var args = Array.prototype.slice.call(arguments, 1);
         return this.each(function() {
@@ -1946,38 +1361,23 @@ jQuery.extend(jQuery.easing, {
         });
     };
 
-    /**
-     * The constructor for the jQuery Plugin
-     * @public
-     */
     $.fn.owlCarousel.Constructor = Owl;
 
 })(window.Zepto || window.jQuery, window, document);
 
 
-
-
-
-/**
- * EvEmitter v1.0.3
- * Lil' event emitter
- * MIT License
- */
-
-/* jshint unused: true, undef: true, strict: true */
-
 (function(global, factory) {
-    // universal module definition
-    /* jshint strict: false */
-    /* globals define, module, window */
+
+
+
     if (typeof define == 'function' && define.amd) {
-        // AMD - RequireJS
+
         define('ev-emitter/ev-emitter', factory);
     } else if (typeof module == 'object' && module.exports) {
-        // CommonJS - Browserify, Webpack
+
         module.exports = factory();
     } else {
-        // Browser globals
+
         global.EvEmitter = factory();
     }
 
@@ -1993,11 +1393,11 @@ jQuery.extend(jQuery.easing, {
         if (!eventName || !listener) {
             return;
         }
-        // set events hash
+
         var events = this._events = this._events || {};
-        // set listeners array
+
         var listeners = events[eventName] = events[eventName] || [];
-        // only add once
+
         if (listeners.indexOf(listener) == -1) {
             listeners.push(listener);
         }
@@ -2009,14 +1409,14 @@ jQuery.extend(jQuery.easing, {
         if (!eventName || !listener) {
             return;
         }
-        // add event
+
         this.on(eventName, listener);
-        // set once flag
-        // set onceEvents hash
+
+
         var onceEvents = this._onceEvents = this._onceEvents || {};
-        // set onceListeners object
+
         var onceListeners = onceEvents[eventName] = onceEvents[eventName] || {};
-        // set flag
+
         onceListeners[listener] = true;
 
         return this;
@@ -2043,21 +1443,21 @@ jQuery.extend(jQuery.easing, {
         var i = 0;
         var listener = listeners[i];
         args = args || [];
-        // once stuff
+
         var onceListeners = this._onceEvents && this._onceEvents[eventName];
 
         while (listener) {
             var isOnce = onceListeners && onceListeners[listener];
             if (isOnce) {
-                // remove listener
-                // remove before trigger to prevent recursion
+
+
                 this.off(eventName, listener);
-                // unset once flag
+
                 delete onceListeners[listener];
             }
-            // trigger listener
+
             listener.apply(this, args);
-            // get next listener
+
             i += isOnce ? 0 : 1;
             listener = listeners[i];
         }
@@ -2069,35 +1469,26 @@ jQuery.extend(jQuery.easing, {
 
 }));
 
-
-
-/**
- * Fizzy UI utils v2.0.2
- * MIT license
- */
-
-/*jshint browser: true, undef: true, unused: true, strict: true */
-
 (function(window, factory) {
-    // universal module definition
-    /*jshint strict: false */
-    /*globals define, module, require */
+
+
+
 
     if (typeof define == 'function' && define.amd) {
-        // AMD
+
         define('fizzy-ui-utils/utils', [
             'desandro-matches-selector/matches-selector'
         ], function(matchesSelector) {
             return factory(window, matchesSelector);
         });
     } else if (typeof module == 'object' && module.exports) {
-        // CommonJS
+
         module.exports = factory(
             window,
             require('desandro-matches-selector')
         );
     } else {
-        // browser global
+
         window.fizzyUIUtils = factory(
             window,
             window.matchesSelector
@@ -2110,9 +1501,9 @@ jQuery.extend(jQuery.easing, {
 
     var utils = {};
 
-    // ----- extend ----- //
 
-    // extends objects
+
+
     utils.extend = function(a, b) {
         for (var prop in b) {
             a[prop] = b[prop];
@@ -2120,33 +1511,33 @@ jQuery.extend(jQuery.easing, {
         return a;
     };
 
-    // ----- modulo ----- //
+
 
     utils.modulo = function(num, div) {
         return ((num % div) + div) % div;
     };
 
-    // ----- makeArray ----- //
 
-    // turn element or nodeList into an array
+
+
     utils.makeArray = function(obj) {
         var ary = [];
         if (Array.isArray(obj)) {
-            // use object if already an array
+
             ary = obj;
         } else if (obj && typeof obj.length == 'number') {
-            // convert nodeList to array
+
             for (var i = 0; i < obj.length; i++) {
                 ary.push(obj[i]);
             }
         } else {
-            // array of single index
+
             ary.push(obj);
         }
         return ary;
     };
 
-    // ----- removeFrom ----- //
+
 
     utils.removeFrom = function(ary, obj) {
         var index = ary.indexOf(obj);
@@ -2155,7 +1546,7 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    // ----- getParent ----- //
+
 
     utils.getParent = function(elem, selector) {
         while (elem != document.body) {
@@ -2166,9 +1557,9 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    // ----- getQueryElement ----- //
 
-    // use element as selector string
+
+
     utils.getQueryElement = function(elem) {
         if (typeof elem == 'string') {
             return document.querySelector(elem);
@@ -2176,9 +1567,9 @@ jQuery.extend(jQuery.easing, {
         return elem;
     };
 
-    // ----- handleEvent ----- //
 
-    // enable .ontype to trigger from .addEventListener( elem, 'type' )
+
+
     utils.handleEvent = function(event) {
         var method = 'on' + event.type;
         if (this[method]) {
@@ -2186,31 +1577,31 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    // ----- filterFindElements ----- //
+
 
     utils.filterFindElements = function(elems, selector) {
-        // make array of elems
+
         elems = utils.makeArray(elems);
         var ffElems = [];
 
         elems.forEach(function(elem) {
-            // check that elem is an actual element
+
             if (!(elem instanceof HTMLElement)) {
                 return;
             }
-            // add elem if no selector
+
             if (!selector) {
                 ffElems.push(elem);
                 return;
             }
-            // filter & find items if we have a selector
-            // filter
+
+
             if (matchesSelector(elem, selector)) {
                 ffElems.push(elem);
             }
-            // find children
+
             var childElems = elem.querySelectorAll(selector);
-            // concat childElems to filterFound array
+
             for (var i = 0; i < childElems.length; i++) {
                 ffElems.push(childElems[i]);
             }
@@ -2219,10 +1610,10 @@ jQuery.extend(jQuery.easing, {
         return ffElems;
     };
 
-    // ----- debounceMethod ----- //
+
 
     utils.debounceMethod = function(_class, methodName, threshold) {
-        // original method
+
         var method = _class.prototype[methodName];
         var timeoutName = methodName + 'Timeout';
 
@@ -2241,7 +1632,7 @@ jQuery.extend(jQuery.easing, {
         };
     };
 
-    // ----- docReady ----- //
+
 
     utils.docReady = function(callback) {
         var readyState = document.readyState;
@@ -2252,9 +1643,9 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    // ----- htmlInit ----- //
 
-    // http://jamesroberts.name/blog/2010/02/22/string-functions-for-javascript-trim-to-camel-case-to-dashed-and-to-underscore/
+
+
     utils.toDashed = function(str) {
         return str.replace(/(.)([A-Z])/g, function(match, $1, $2) {
             return $1 + '-' + $2;
@@ -2262,11 +1653,6 @@ jQuery.extend(jQuery.easing, {
     };
 
     var console = window.console;
-    /**
-     * allow user to initialize classes via [data-namespace] or .js-namespace class
-     * htmlInit( Widget, 'widgetName' )
-     * options are parsed from data-namespace-options
-     */
     utils.htmlInit = function(WidgetClass, namespace) {
         utils.docReady(function() {
             var dashedNamespace = utils.toDashed(namespace);
@@ -2285,16 +1671,16 @@ jQuery.extend(jQuery.easing, {
                 try {
                     options = attr && JSON.parse(attr);
                 } catch (error) {
-                    // log error, do not initialize
+
                     if (console) {
                         console.error('Error parsing ' + dataAttr + ' on ' + elem.className +
                             ': ' + error);
                     }
                     return;
                 }
-                // initialize
+
                 var instance = new WidgetClass(elem, options);
-                // make available via $().data('layoutname')
+
                 if (jQuery) {
                     jQuery.data(elem, namespace, instance);
                 }
@@ -2303,22 +1689,18 @@ jQuery.extend(jQuery.easing, {
         });
     };
 
-    // -----  ----- //
+
 
     return utils;
 
 }));
 
-/**
- * Outlayer Item
- */
-
 (function(window, factory) {
-    // universal module definition
-    /* jshint strict: false */
-    /* globals define, module, require */
+
+
+
     if (typeof define == 'function' && define.amd) {
-        // AMD - RequireJS
+
         define('outlayer/item', [
                 'ev-emitter/ev-emitter',
                 'get-size/get-size'
@@ -2326,13 +1708,13 @@ jQuery.extend(jQuery.easing, {
             factory
         );
     } else if (typeof module == 'object' && module.exports) {
-        // CommonJS - Browserify, Webpack
+
         module.exports = factory(
             require('ev-emitter'),
             require('get-size')
         );
     } else {
-        // browser global
+
         window.Outlayer = {};
         window.Outlayer.Item = factory(
             window.EvEmitter,
@@ -2343,7 +1725,7 @@ jQuery.extend(jQuery.easing, {
 }(window, function factory(EvEmitter, getSize) {
     'use strict';
 
-    // ----- helpers ----- //
+
 
     function isEmptyObj(obj) {
         for (var prop in obj) {
@@ -2353,7 +1735,7 @@ jQuery.extend(jQuery.easing, {
         return true;
     }
 
-    // -------------------------- CSS3 support -------------------------- //
+
 
 
     var docElemStyle = document.documentElement.style;
@@ -2368,7 +1750,7 @@ jQuery.extend(jQuery.easing, {
         transition: 'transitionend'
     }[transitionProperty];
 
-    // cache all vendor properties that could have vendor prefix
+
     var vendorProperties = {
         transform: transformProperty,
         transition: transitionProperty,
@@ -2377,7 +1759,7 @@ jQuery.extend(jQuery.easing, {
         transitionDelay: transitionProperty + 'Delay'
     };
 
-    // -------------------------- Item -------------------------- //
+
 
     function Item(element, layout) {
         if (!element) {
@@ -2385,7 +1767,7 @@ jQuery.extend(jQuery.easing, {
         }
 
         this.element = element;
-        // parent layout class, i.e. Masonry, Isotope, or Packery
+
         this.layout = layout;
         this.position = {
             x: 0,
@@ -2395,12 +1777,12 @@ jQuery.extend(jQuery.easing, {
         this._create();
     }
 
-    // inherit EvEmitter
+
     var proto = Item.prototype = Object.create(EvEmitter.prototype);
     proto.constructor = Item;
 
     proto._create = function() {
-        // transition objects
+
         this._transn = {
             ingProperties: {},
             clean: {},
@@ -2412,7 +1794,7 @@ jQuery.extend(jQuery.easing, {
         });
     };
 
-    // trigger specified handler for event type
+
     proto.handleEvent = function(event) {
         var method = 'on' + event.type;
         if (this[method]) {
@@ -2424,38 +1806,34 @@ jQuery.extend(jQuery.easing, {
         this.size = getSize(this.element);
     };
 
-    /**
-     * apply CSS styles to element
-     * @param {Object} style
-     */
     proto.css = function(style) {
         var elemStyle = this.element.style;
 
         for (var prop in style) {
-            // use vendor property if available
+
             var supportedProp = vendorProperties[prop] || prop;
             elemStyle[supportedProp] = style[prop];
         }
     };
 
-    // measure position, and sets it
+
     proto.getPosition = function() {
         var style = getComputedStyle(this.element);
         var isOriginLeft = this.layout._getOption('originLeft');
         var isOriginTop = this.layout._getOption('originTop');
         var xValue = style[isOriginLeft ? 'left' : 'right'];
         var yValue = style[isOriginTop ? 'top' : 'bottom'];
-        // convert percent to pixels
+
         var layoutSize = this.layout.size;
         var x = xValue.indexOf('%') != -1 ?
             (parseFloat(xValue) / 100) * layoutSize.width : parseInt(xValue, 10);
         var y = yValue.indexOf('%') != -1 ?
             (parseFloat(yValue) / 100) * layoutSize.height : parseInt(yValue, 10);
 
-        // clean up 'auto' or other non-integer values
+
         x = isNaN(x) ? 0 : x;
         y = isNaN(y) ? 0 : y;
-        // remove padding from measurement
+
         x -= isOriginLeft ? layoutSize.paddingLeft : layoutSize.paddingRight;
         y -= isOriginTop ? layoutSize.paddingTop : layoutSize.paddingBottom;
 
@@ -2463,33 +1841,33 @@ jQuery.extend(jQuery.easing, {
         this.position.y = y;
     };
 
-    // set settled position, apply padding
+
     proto.layoutPosition = function() {
         var layoutSize = this.layout.size;
         var style = {};
         var isOriginLeft = this.layout._getOption('originLeft');
         var isOriginTop = this.layout._getOption('originTop');
 
-        // x
+
         var xPadding = isOriginLeft ? 'paddingLeft' : 'paddingRight';
         var xProperty = isOriginLeft ? 'left' : 'right';
         var xResetProperty = isOriginLeft ? 'right' : 'left';
 
         var x = this.position.x + layoutSize[xPadding];
-        // set in percentage or pixels
+
         style[xProperty] = this.getXValue(x);
-        // reset other property
+
         style[xResetProperty] = '';
 
-        // y
+
         var yPadding = isOriginTop ? 'paddingTop' : 'paddingBottom';
         var yProperty = isOriginTop ? 'top' : 'bottom';
         var yResetProperty = isOriginTop ? 'bottom' : 'top';
 
         var y = this.position.y + layoutSize[yPadding];
-        // set in percentage or pixels
+
         style[yProperty] = this.getYValue(y);
-        // reset other property
+
         style[yResetProperty] = '';
 
         this.css(style);
@@ -2510,7 +1888,7 @@ jQuery.extend(jQuery.easing, {
 
     proto._transitionTo = function(x, y) {
         this.getPosition();
-        // get current x & y from top/left
+
         var curX = this.position.x;
         var curY = this.position.y;
 
@@ -2518,10 +1896,10 @@ jQuery.extend(jQuery.easing, {
         var compareY = parseInt(y, 10);
         var didNotMove = compareX === this.position.x && compareY === this.position.y;
 
-        // save end position
+
         this.setPosition(x, y);
 
-        // if did not move and not transitioning, just go to layout
+
         if (didNotMove && !this.isTransitioning) {
             this.layoutPosition();
             return;
@@ -2542,7 +1920,7 @@ jQuery.extend(jQuery.easing, {
     };
 
     proto.getTranslate = function(x, y) {
-        // flip cooridinates if origin on right or bottom
+
         var isOriginLeft = this.layout._getOption('originLeft');
         var isOriginTop = this.layout._getOption('originTop');
         x = isOriginLeft ? x : -x;
@@ -2550,7 +1928,7 @@ jQuery.extend(jQuery.easing, {
         return 'translate3d(' + x + 'px, ' + y + 'px, 0)';
     };
 
-    // non transition + transform support
+
     proto.goTo = function(x, y) {
         this.setPosition(x, y);
         this.layoutPosition();
@@ -2563,14 +1941,6 @@ jQuery.extend(jQuery.easing, {
         this.position.y = parseInt(y, 10);
     };
 
-    // ----- transition ----- //
-
-    /**
-     * @param {Object} style - CSS
-     * @param {Function} onTransitionEnd
-     */
-
-    // non transition, just trigger callback
     proto._nonTransition = function(args) {
         this.css(args.to);
         if (args.isCleaning) {
@@ -2581,54 +1951,46 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    /**
-     * proper transition
-     * @param {Object} args - arguments
-     *   @param {Object} to - style to transition to
-     *   @param {Object} from - style to start transition from
-     *   @param {Boolean} isCleaning - removes transition styles after transition
-     *   @param {Function} onTransitionEnd - callback
-     */
     proto.transition = function(args) {
-        // redirect to nonTransition if no transition duration
+
         if (!parseFloat(this.layout.options.transitionDuration)) {
             this._nonTransition(args);
             return;
         }
 
         var _transition = this._transn;
-        // keep track of onTransitionEnd callback by css property
+
         for (var prop in args.onTransitionEnd) {
             _transition.onEnd[prop] = args.onTransitionEnd[prop];
         }
-        // keep track of properties that are transitioning
+
         for (prop in args.to) {
             _transition.ingProperties[prop] = true;
-            // keep track of properties to clean up when transition is done
+
             if (args.isCleaning) {
                 _transition.clean[prop] = true;
             }
         }
 
-        // set from styles
+
         if (args.from) {
             this.css(args.from);
-            // force redraw. http://blog.alexmaccaw.com/css-transitions
+
             var h = this.element.offsetHeight;
-            // hack for JSHint to hush about unused var
+
             h = null;
         }
-        // enable transition
+
         this.enableTransition(args.to);
-        // set styles that are transitioning
+
         this.css(args.to);
 
         this.isTransitioning = true;
 
     };
 
-    // dash before all cap letters, including first for
-    // WebkitTransform => -webkit-transform
+
+
     function toDashedAll(str) {
         return str.replace(/([A-Z])/g, function($1) {
             return '-' + $1.toLowerCase();
@@ -2637,36 +1999,36 @@ jQuery.extend(jQuery.easing, {
 
     var transitionProps = 'opacity,' + toDashedAll(transformProperty);
 
-    proto.enableTransition = function( /* style */ ) {
-        // HACK changing transitionProperty during a transition
-        // will cause transition to jump
+    proto.enableTransition = function() {
+
+
         if (this.isTransitioning) {
             return;
         }
 
-        // make `transition: foo, bar, baz` from style object
-        // HACK un-comment this when enableTransition can work
-        // while a transition is happening
-        // var transitionValues = [];
-        // for ( var prop in style ) {
-        //   // dash-ify camelCased properties like WebkitTransition
-        //   prop = vendorProperties[ prop ] || prop;
-        //   transitionValues.push( toDashedAll( prop ) );
-        // }
-        // munge number to millisecond, to match stagger
+
+
+
+
+
+
+
+
+
+
         var duration = this.layout.options.transitionDuration;
         duration = typeof duration == 'number' ? duration + 'ms' : duration;
-        // enable transition styles
+
         this.css({
             transitionProperty: transitionProps,
             transitionDuration: duration,
             transitionDelay: this.staggerDelay || 0
         });
-        // listen for transition end event
+
         this.element.addEventListener(transitionEndEvent, this, false);
     };
 
-    // ----- events ----- //
+
 
     proto.onwebkitTransitionEnd = function(event) {
         this.ontransitionend(event);
@@ -2676,34 +2038,34 @@ jQuery.extend(jQuery.easing, {
         this.ontransitionend(event);
     };
 
-    // properties that I munge to make my life easier
+
     var dashedVendorProperties = {
         '-webkit-transform': 'transform'
     };
 
     proto.ontransitionend = function(event) {
-        // disregard bubbled events from children
+
         if (event.target !== this.element) {
             return;
         }
         var _transition = this._transn;
-        // get property name of transitioned property, convert to prefix-free
+
         var propertyName = dashedVendorProperties[event.propertyName] || event.propertyName;
 
-        // remove property that has completed transitioning
+
         delete _transition.ingProperties[propertyName];
-        // check if any properties are still transitioning
+
         if (isEmptyObj(_transition.ingProperties)) {
-            // all properties have completed transitioning
+
             this.disableTransition();
         }
-        // clean style
+
         if (propertyName in _transition.clean) {
-            // clean up style
+
             this.element.style[event.propertyName] = '';
             delete _transition.clean[propertyName];
         }
-        // trigger onTransitionEnd callback
+
         if (propertyName in _transition.onEnd) {
             var onTransitionEnd = _transition.onEnd[propertyName];
             onTransitionEnd.call(this);
@@ -2718,13 +2080,8 @@ jQuery.extend(jQuery.easing, {
         this.element.removeEventListener(transitionEndEvent, this, false);
         this.isTransitioning = false;
     };
-
-    /**
-     * removes style property from element
-     * @param {Object} style
-     **/
     proto._removeStyles = function(style) {
-        // clean up transition styles
+
         var cleanStyle = {};
         for (var prop in style) {
             cleanStyle[prop] = '';
@@ -2739,35 +2096,35 @@ jQuery.extend(jQuery.easing, {
     };
 
     proto.removeTransitionStyles = function() {
-        // remove transition
+
         this.css(cleanTransitionStyle);
     };
 
-    // ----- stagger ----- //
+
 
     proto.stagger = function(delay) {
         delay = isNaN(delay) ? 0 : delay;
         this.staggerDelay = delay + 'ms';
     };
 
-    // ----- show/hide/remove ----- //
 
-    // remove element from DOM
+
+
     proto.removeElem = function() {
         this.element.parentNode.removeChild(this.element);
-        // remove display: none
+
         this.css({ display: '' });
         this.emitEvent('remove', [this]);
     };
 
     proto.remove = function() {
-        // just remove element if no transition support or no transition
+
         if (!transitionProperty || !parseFloat(this.layout.options.transitionDuration)) {
             this.removeElem();
             return;
         }
 
-        // start transition
+
         this.once('transitionEnd', function() {
             this.removeElem();
         });
@@ -2776,7 +2133,7 @@ jQuery.extend(jQuery.easing, {
 
     proto.reveal = function() {
         delete this.isHidden;
-        // remove display: none
+
         this.css({ display: '' });
 
         var options = this.layout.options;
@@ -2794,34 +2151,29 @@ jQuery.extend(jQuery.easing, {
     };
 
     proto.onRevealTransitionEnd = function() {
-        // check if still visible
-        // during transition, item may have been hidden
+
+
         if (!this.isHidden) {
             this.emitEvent('reveal');
         }
     };
 
-    /**
-     * get style property use for hide/reveal transition end
-     * @param {String} styleProperty - hiddenStyle/visibleStyle
-     * @returns {String}
-     */
     proto.getHideRevealTransitionEndProperty = function(styleProperty) {
         var optionStyle = this.layout.options[styleProperty];
-        // use opacity
+
         if (optionStyle.opacity) {
             return 'opacity';
         }
-        // get first property
+
         for (var prop in optionStyle) {
             return prop;
         }
     };
 
     proto.hide = function() {
-        // set flag
+
         this.isHidden = true;
-        // remove display: none
+
         this.css({ display: '' });
 
         var options = this.layout.options;
@@ -2833,15 +2185,15 @@ jQuery.extend(jQuery.easing, {
         this.transition({
             from: options.visibleStyle,
             to: options.hiddenStyle,
-            // keep hidden stuff hidden
+
             isCleaning: true,
             onTransitionEnd: onTransitionEnd
         });
     };
 
     proto.onHideTransitionEnd = function() {
-        // check if still hidden
-        // during transition, item may have been un-hidden
+
+
         if (this.isHidden) {
             this.css({ display: 'none' });
             this.emitEvent('hide');
@@ -2864,19 +2216,15 @@ jQuery.extend(jQuery.easing, {
 
 }));
 
-/*!
- * Outlayer v2.1.0
- * the brains and guts of a layout library
- * MIT license
- */
+
 
 (function(window, factory) {
     'use strict';
-    // universal module definition
-    /* jshint strict: false */
-    /* globals define, module, require */
+
+
+
     if (typeof define == 'function' && define.amd) {
-        // AMD - RequireJS
+
         define('outlayer/outlayer', [
                 'ev-emitter/ev-emitter',
                 'get-size/get-size',
@@ -2888,7 +2236,7 @@ jQuery.extend(jQuery.easing, {
             }
         );
     } else if (typeof module == 'object' && module.exports) {
-        // CommonJS - Browserify, Webpack
+
         module.exports = factory(
             window,
             require('ev-emitter'),
@@ -2897,7 +2245,7 @@ jQuery.extend(jQuery.easing, {
             require('./item')
         );
     } else {
-        // browser global
+
         window.Outlayer = factory(
             window,
             window.EvEmitter,
@@ -2910,25 +2258,19 @@ jQuery.extend(jQuery.easing, {
 }(window, function factory(window, EvEmitter, getSize, utils, Item) {
     'use strict';
 
-    // ----- vars ----- //
+
 
     var console = window.console;
     var jQuery = window.jQuery;
     var noop = function() {};
 
-    // -------------------------- Outlayer -------------------------- //
 
-    // globally unique identifiers
+
+
     var GUID = 0;
-    // internal store of all Outlayer intances
+
     var instances = {};
 
-
-    /**
-     * @param {Element, String} element
-     * @param {Object} options
-     * @constructor
-     */
     function Outlayer(element, options) {
         var queryElement = utils.getQueryElement(element);
         if (!queryElement) {
@@ -2939,21 +2281,21 @@ jQuery.extend(jQuery.easing, {
             return;
         }
         this.element = queryElement;
-        // add jQuery
+
         if (jQuery) {
             this.$element = jQuery(this.element);
         }
 
-        // options
+
         this.options = utils.extend({}, this.constructor.defaults);
         this.option(options);
 
-        // add id for Outlayer.getFromElement
-        var id = ++GUID;
-        this.element.outlayerGUID = id; // expando
-        instances[id] = this; // associate via id
 
-        // kick it off
+        var id = ++GUID;
+        this.element.outlayerGUID = id;
+        instances[id] = this;
+
+
         this._create();
 
         var isInitLayout = this._getOption('initLayout');
@@ -2962,11 +2304,11 @@ jQuery.extend(jQuery.easing, {
         }
     }
 
-    // settings are for internal use only
+
     Outlayer.namespace = 'outlayer';
     Outlayer.Item = Item;
 
-    // default options
+
     Outlayer.defaults = {
         containerStyle: {
             position: 'relative'
@@ -2976,7 +2318,7 @@ jQuery.extend(jQuery.easing, {
         originTop: true,
         resize: true,
         resizeContainer: true,
-        // item options
+
         transitionDuration: '0.4s',
         hiddenStyle: {
             opacity: 0,
@@ -2989,20 +2331,13 @@ jQuery.extend(jQuery.easing, {
     };
 
     var proto = Outlayer.prototype;
-    // inherit EvEmitter
+
     utils.extend(proto, EvEmitter.prototype);
 
-    /**
-     * set options
-     * @param {Object} opts
-     */
     proto.option = function(opts) {
         utils.extend(this.options, opts);
     };
 
-    /**
-     * get backwards compatible option value, check old name
-     */
     proto._getOption = function(option) {
         var oldOption = this.constructor.compatOptions[option];
         return oldOption && this.options[oldOption] !== undefined ?
@@ -3010,7 +2345,7 @@ jQuery.extend(jQuery.easing, {
     };
 
     Outlayer.compatOptions = {
-        // currentName: oldName
+
         initLayout: 'isInitLayout',
         horizontal: 'isHorizontal',
         layoutInstant: 'isLayoutInstant',
@@ -3021,39 +2356,34 @@ jQuery.extend(jQuery.easing, {
     };
 
     proto._create = function() {
-        // get items from children
+
         this.reloadItems();
-        // elements that affect layout, but are not laid out
+
         this.stamps = [];
         this.stamp(this.options.stamp);
-        // set container style
+
         utils.extend(this.element.style, this.options.containerStyle);
 
-        // bind resize method
+
         var canBindResize = this._getOption('resize');
         if (canBindResize) {
             this.bindResize();
         }
     };
 
-    // goes through all children again and gets bricks in proper order
+
     proto.reloadItems = function() {
-        // collection of item elements
+
         this.items = this._itemize(this.element.children);
     };
 
 
-    /**
-     * turn elements into Outlayer.Items to be used in layout
-     * @param {Array or NodeList or HTMLElement} elems
-     * @returns {Array} items - collection of new Outlayer Items
-     */
     proto._itemize = function(elems) {
 
         var itemElems = this._filterFindItemElements(elems);
         var Item = this.constructor.Item;
 
-        // create new Outlayer Items for collection
+
         var items = [];
         for (var i = 0; i < itemElems.length; i++) {
             var elem = itemElems[i];
@@ -3064,50 +2394,34 @@ jQuery.extend(jQuery.easing, {
         return items;
     };
 
-    /**
-     * get item elements to be used in layout
-     * @param {Array or NodeList or HTMLElement} elems
-     * @returns {Array} items - item elements
-     */
     proto._filterFindItemElements = function(elems) {
         return utils.filterFindElements(elems, this.options.itemSelector);
     };
 
-    /**
-     * getter method for getting item elements
-     * @returns {Array} elems - collection of item elements
-     */
+
     proto.getItemElements = function() {
         return this.items.map(function(item) {
             return item.element;
         });
     };
 
-    // ----- init & layout ----- //
-
-    /**
-     * lays out all items
-     */
     proto.layout = function() {
         this._resetLayout();
         this._manageStamps();
 
-        // don't animate first layout
+
         var layoutInstant = this._getOption('layoutInstant');
         var isInstant = layoutInstant !== undefined ?
             layoutInstant : !this._isLayoutInited;
         this.layoutItems(this.items, isInstant);
 
-        // flag for initalized
+
         this._isLayoutInited = true;
     };
 
-    // _init is alias for layout
+
     proto._init = proto.layout;
 
-    /**
-     * logic before any new layout
-     */
     proto._resetLayout = function() {
         this.getSize();
     };
@@ -3117,38 +2431,25 @@ jQuery.extend(jQuery.easing, {
         this.size = getSize(this.element);
     };
 
-    /**
-     * get measurement from option, for columnWidth, rowHeight, gutter
-     * if option is String -> get element from selector string, & get size of element
-     * if option is Element -> get size of element
-     * else use option as a number
-     *
-     * @param {String} measurement
-     * @param {String} size - width or height
-     * @private
-     */
+
     proto._getMeasurement = function(measurement, size) {
         var option = this.options[measurement];
         var elem;
         if (!option) {
-            // default to 0
+
             this[measurement] = 0;
         } else {
-            // use option as an element
+
             if (typeof option == 'string') {
                 elem = this.element.querySelector(option);
             } else if (option instanceof HTMLElement) {
                 elem = option;
             }
-            // use size of element, if element
+
             this[measurement] = elem ? getSize(elem)[size] : option;
         }
     };
 
-    /**
-     * layout a collection of item elements
-     * @api public
-     */
     proto.layoutItems = function(items, isInstant) {
         items = this._getItemsForLayout(items);
 
@@ -3157,37 +2458,27 @@ jQuery.extend(jQuery.easing, {
         this._postLayout();
     };
 
-    /**
-     * get the items to be laid out
-     * you may want to skip over some items
-     * @param {Array} items
-     * @returns {Array} items
-     */
+
     proto._getItemsForLayout = function(items) {
         return items.filter(function(item) {
             return !item.isIgnored;
         });
     };
 
-    /**
-     * layout items
-     * @param {Array} items
-     * @param {Boolean} isInstant
-     */
     proto._layoutItems = function(items, isInstant) {
         this._emitCompleteOnItems('layout', items);
 
         if (!items || !items.length) {
-            // no items, emit event with empty array
+
             return;
         }
 
         var queue = [];
 
         items.forEach(function(item) {
-            // get x/y object from method
+
             var position = this._getItemLayoutPosition(item);
-            // enqueue
+
             position.item = item;
             position.isInstant = isInstant || item.isLayoutInstant;
             queue.push(position);
@@ -3196,24 +2487,14 @@ jQuery.extend(jQuery.easing, {
         this._processLayoutQueue(queue);
     };
 
-    /**
-     * get item layout position
-     * @param {Outlayer.Item} item
-     * @returns {Object} x and y position
-     */
-    proto._getItemLayoutPosition = function( /* item */ ) {
+    proto._getItemLayoutPosition = function() {
         return {
             x: 0,
             y: 0
         };
     };
 
-    /**
-     * iterate over array and position each item
-     * Reason being - separating this logic prevents 'layout invalidation'
-     * thx @paul_irish
-     * @param {Array} queue
-     */
+
     proto._processLayoutQueue = function(queue) {
         this.updateStagger();
         queue.forEach(function(obj, i) {
@@ -3221,7 +2502,7 @@ jQuery.extend(jQuery.easing, {
         }, this);
     };
 
-    // set stagger from option in milliseconds number
+
     proto.updateStagger = function() {
         var stagger = this.options.stagger;
         if (stagger === null || stagger === undefined) {
@@ -3232,16 +2513,10 @@ jQuery.extend(jQuery.easing, {
         return this.stagger;
     };
 
-    /**
-     * Sets position of item in DOM
-     * @param {Outlayer.Item} item
-     * @param {Number} x - horizontal position
-     * @param {Number} y - vertical position
-     * @param {Boolean} isInstant - disables transitions
-     */
+
     proto._positionItem = function(item, x, y, isInstant, i) {
         if (isInstant) {
-            // if not transition, just set CSS
+
             item.goTo(x, y);
         } else {
             item.stagger(i * this.stagger);
@@ -3249,10 +2524,7 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    /**
-     * Any logic you want to do after each layout,
-     * i.e. size the container
-     */
+
     proto._postLayout = function() {
         this.resizeContainer();
     };
@@ -3269,25 +2541,16 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    /**
-     * Sets width or height of container if returned
-     * @returns {Object} size
-     *   @param {Number} width
-     *   @param {Number} height
-     */
+
     proto._getContainerSize = noop;
 
-    /**
-     * @param {Number} measure - size of width or height
-     * @param {Boolean} isWidth
-     */
     proto._setContainerMeasure = function(measure, isWidth) {
         if (measure === undefined) {
             return;
         }
 
         var elemSize = this.size;
-        // add padding and border width if border box
+
         if (elemSize.isBorderBox) {
             measure += isWidth ? elemSize.paddingLeft + elemSize.paddingRight +
                 elemSize.borderLeftWidth + elemSize.borderRightWidth :
@@ -3299,11 +2562,6 @@ jQuery.extend(jQuery.easing, {
         this.element.style[isWidth ? 'width' : 'height'] = measure + 'px';
     };
 
-    /**
-     * emit eventComplete on a collection of items events
-     * @param {String} eventName
-     * @param {Array} items - Outlayer.Items
-     */
     proto._emitCompleteOnItems = function(eventName, items) {
         var _this = this;
 
@@ -3326,57 +2584,38 @@ jQuery.extend(jQuery.easing, {
             }
         }
 
-        // bind callback
+
         items.forEach(function(item) {
             item.once(eventName, tick);
         });
     };
 
-    /**
-     * emits events via EvEmitter and jQuery events
-     * @param {String} type - name of event
-     * @param {Event} event - original event
-     * @param {Array} args - extra arguments
-     */
     proto.dispatchEvent = function(type, event, args) {
-        // add original event to arguments
+
         var emitArgs = event ? [event].concat(args) : args;
         this.emitEvent(type, emitArgs);
 
         if (jQuery) {
-            // set this.$element
+
             this.$element = this.$element || jQuery(this.element);
             if (event) {
-                // create jQuery event
+
                 var $event = jQuery.Event(event);
                 $event.type = type;
                 this.$element.trigger($event, args);
             } else {
-                // just trigger with type if no event available
+
                 this.$element.trigger(type, args);
             }
         }
     };
 
-    // -------------------------- ignore & stamps -------------------------- //
-
-
-    /**
-     * keep item in collection, but do not lay it out
-     * ignored items do not get skipped in layout
-     * @param {Element} elem
-     */
     proto.ignore = function(elem) {
         var item = this.getItem(elem);
         if (item) {
             item.isIgnored = true;
         }
     };
-
-    /**
-     * return item to layout collection
-     * @param {Element} elem
-     */
     proto.unignore = function(elem) {
         var item = this.getItem(elem);
         if (item) {
@@ -3384,10 +2623,6 @@ jQuery.extend(jQuery.easing, {
         }
     };
 
-    /**
-     * adds elements to stamps
-     * @param {NodeList, Array, Element, or String} elems
-     */
     proto.stamp = function(elems) {
         elems = this._find(elems);
         if (!elems) {
@@ -3395,14 +2630,11 @@ jQuery.extend(jQuery.easing, {
         }
 
         this.stamps = this.stamps.concat(elems);
-        // ignore
+
         elems.forEach(this.ignore, this);
     };
 
-    /**
-     * removes elements to stamps
-     * @param {NodeList, Array, or Element} elems
-     */
+
     proto.unstamp = function(elems) {
         elems = this._find(elems);
         if (!elems) {
@@ -3410,22 +2642,18 @@ jQuery.extend(jQuery.easing, {
         }
 
         elems.forEach(function(elem) {
-            // filter out removed stamp elements
+
             utils.removeFrom(this.stamps, elem);
             this.unignore(elem);
         }, this);
     };
 
-    /**
-     * finds child elements
-     * @param {NodeList, Array, Element, or String} elems
-     * @returns {Array} elems
-     */
+
     proto._find = function(elems) {
         if (!elems) {
             return;
         }
-        // if string, use argument as selector string
+
         if (typeof elems == 'string') {
             elems = this.element.querySelectorAll(elems);
         }
@@ -3443,9 +2671,9 @@ jQuery.extend(jQuery.easing, {
         this.stamps.forEach(this._manageStamp, this);
     };
 
-    // update boundingLeft / Top
+
     proto._getBoundingRect = function() {
-        // get bounding rect for container element
+
         var boundingRect = this.element.getBoundingClientRect();
         var size = this.size;
         this._boundingRect = {
@@ -3456,16 +2684,9 @@ jQuery.extend(jQuery.easing, {
         };
     };
 
-    /**
-     * @param {Element} stamp
-     **/
+
     proto._manageStamp = noop;
 
-    /**
-     * get x/y position of element relative to container element
-     * @param {Element} elem
-     * @returns {Object} offset - has left, top, right, bottom
-     */
     proto._getElementOffset = function(elem) {
         var boundingRect = elem.getBoundingClientRect();
         var thisRect = this._boundingRect;
@@ -3479,23 +2700,16 @@ jQuery.extend(jQuery.easing, {
         return offset;
     };
 
-    // -------------------------- resize -------------------------- //
 
-    // enable event handlers for listeners
-    // i.e. resize -> onresize
+
+
+
     proto.handleEvent = utils.handleEvent;
-
-    /**
-     * Bind layout to window resizing
-     */
     proto.bindResize = function() {
         window.addEventListener('resize', this);
         this.isResizeBound = true;
     };
 
-    /**
-     * Unbind layout to window resizing
-     */
     proto.unbindResize = function() {
         window.removeEventListener('resize', this);
         this.isResizeBound = false;
@@ -3508,8 +2722,8 @@ jQuery.extend(jQuery.easing, {
     utils.debounceMethod(Outlayer, 'onresize', 100);
 
     proto.resize = function() {
-        // don't trigger if size did not change
-        // or if resize was unbound. See #9
+
+
         if (!this.isResizeBound || !this.needsResizeLayout()) {
             return;
         }
@@ -3517,74 +2731,53 @@ jQuery.extend(jQuery.easing, {
         this.layout();
     };
 
-    /**
-     * check if layout is needed post layout
-     * @returns Boolean
-     */
     proto.needsResizeLayout = function() {
         var size = getSize(this.element);
-        // check that this.size and size are there
-        // IE8 triggers resize on body size change, so they might not be
+
+
         var hasSizes = this.size && size;
         return hasSizes && size.innerWidth !== this.size.innerWidth;
     };
 
-    // -------------------------- methods -------------------------- //
 
-    /**
-     * add items to Outlayer instance
-     * @param {Array or NodeList or Element} elems
-     * @returns {Array} items - Outlayer.Items
-     **/
     proto.addItems = function(elems) {
         var items = this._itemize(elems);
-        // add items to collection
+
         if (items.length) {
             this.items = this.items.concat(items);
         }
         return items;
     };
 
-    /**
-     * Layout newly-appended item elements
-     * @param {Array or NodeList or Element} elems
-     */
     proto.appended = function(elems) {
         var items = this.addItems(elems);
         if (!items.length) {
             return;
         }
-        // layout and reveal just the new items
+
         this.layoutItems(items, true);
         this.reveal(items);
     };
 
-    /**
-     * Layout prepended elements
-     * @param {Array or NodeList or Element} elems
-     */
+
     proto.prepended = function(elems) {
         var items = this._itemize(elems);
         if (!items.length) {
             return;
         }
-        // add items to beginning of collection
+
         var previousItems = this.items.slice(0);
         this.items = items.concat(previousItems);
-        // start new layout
+
         this._resetLayout();
         this._manageStamps();
-        // layout new stuff without transition
+
         this.layoutItems(items, true);
         this.reveal(items);
-        // layout previous items
+
         this.layoutItems(previousItems);
     };
 
-    /**
-     * reveal a collection of items
-     * @param {Array of Outlayer.Items} items
-     */
     proto.reveal = function(items) {
         this._emitCompleteOnItems('reveal', items);
         if (!items || !items.length) {
@@ -3597,10 +2790,6 @@ jQuery.extend(jQuery.easing, {
         });
     };
 
-    /**
-     * hide a collection of items
-     * @param {Array of Outlayer.Items} items
-     */
     proto.hide = function(items) {
         this._emitCompleteOnItems('hide', items);
         if (!items || !items.length) {
@@ -3613,46 +2802,27 @@ jQuery.extend(jQuery.easing, {
         });
     };
 
-    /**
-     * reveal item elements
-     * @param {Array}, {Element}, {NodeList} items
-     */
     proto.revealItemElements = function(elems) {
         var items = this.getItems(elems);
         this.reveal(items);
     };
 
-    /**
-     * hide item elements
-     * @param {Array}, {Element}, {NodeList} items
-     */
     proto.hideItemElements = function(elems) {
         var items = this.getItems(elems);
         this.hide(items);
     };
 
-    /**
-     * get Outlayer.Item, given an Element
-     * @param {Element} elem
-     * @param {Function} callback
-     * @returns {Outlayer.Item} item
-     */
     proto.getItem = function(elem) {
-        // loop through items to get the one that matches
+
         for (var i = 0; i < this.items.length; i++) {
             var item = this.items[i];
             if (item.element == elem) {
-                // return item
+
                 return item;
             }
         }
     };
 
-    /**
-     * get collection of Outlayer.Items, given Elements
-     * @param {Array} elems
-     * @returns {Array} items - Outlayer.Items
-     */
     proto.getItems = function(elems) {
         elems = utils.makeArray(elems);
         var items = [];
@@ -3666,37 +2836,33 @@ jQuery.extend(jQuery.easing, {
         return items;
     };
 
-    /**
-     * remove element(s) from instance and DOM
-     * @param {Array or NodeList or Element} elems
-     */
     proto.remove = function(elems) {
         var removeItems = this.getItems(elems);
 
         this._emitCompleteOnItems('remove', removeItems);
 
-        // bail if no items to remove
+
         if (!removeItems || !removeItems.length) {
             return;
         }
 
         removeItems.forEach(function(item) {
             item.remove();
-            // remove item from collection
+
             utils.removeFrom(this.items, item);
         }, this);
     };
 
-    // ----- destroy ----- //
 
-    // remove and disable Outlayer instance
+
+
     proto.destroy = function() {
-        // clean up dynamic styles
+
         var style = this.element.style;
         style.height = '';
         style.position = '';
         style.width = '';
-        // destroy items
+
         this.items.forEach(function(item) {
             item.destroy();
         });
@@ -3704,22 +2870,16 @@ jQuery.extend(jQuery.easing, {
         this.unbindResize();
 
         var id = this.element.outlayerGUID;
-        delete instances[id]; // remove reference to instance by id
+        delete instances[id];
         delete this.element.outlayerGUID;
-        // remove data for jQuery
+
         if (jQuery) {
             jQuery.removeData(this.element, this.constructor.namespace);
         }
 
     };
 
-    // -------------------------- data -------------------------- //
 
-    /**
-     * get Outlayer instance from element
-     * @param {Element} elem
-     * @returns {Outlayer}
-     */
     Outlayer.data = function(elem) {
         elem = utils.getQueryElement(elem);
         var id = elem && elem.outlayerGUID;
@@ -3727,16 +2887,11 @@ jQuery.extend(jQuery.easing, {
     };
 
 
-    // -------------------------- create Outlayer class -------------------------- //
 
-    /**
-     * create a layout class
-     * @param {String} namespace
-     */
     Outlayer.create = function(namespace, options) {
-        // sub-class Outlayer
+
         var Layout = subclass(Outlayer);
-        // apply new options and compatOptions
+
         Layout.defaults = utils.extend({}, Outlayer.defaults);
         utils.extend(Layout.defaults, options);
         Layout.compatOptions = utils.extend({}, Outlayer.compatOptions);
@@ -3745,16 +2900,16 @@ jQuery.extend(jQuery.easing, {
 
         Layout.data = Outlayer.data;
 
-        // sub-class Item
+
         Layout.Item = subclass(Item);
 
-        // -------------------------- declarative -------------------------- //
+
 
         utils.htmlInit(Layout, namespace);
 
-        // -------------------------- jQuery bridge -------------------------- //
 
-        // make into jQuery plugin
+
+
         if (jQuery && jQuery.bridget) {
             jQuery.bridget(namespace, Layout);
         }
@@ -3773,16 +2928,16 @@ jQuery.extend(jQuery.easing, {
         return SubClass;
     }
 
-    // ----- helpers ----- //
 
-    // how many milliseconds are in each unit
+
+
     var msUnits = {
         ms: 1,
         s: 1000
     };
 
-    // munge time-like parameter into millisecond number
-    // '0.4s' -> 40
+
+
     function getMilliseconds(time) {
         if (typeof time == 'number') {
             return time;
@@ -3798,9 +2953,9 @@ jQuery.extend(jQuery.easing, {
         return num * mult;
     }
 
-    // ----- fin ----- //
 
-    // back in global
+
+
     Outlayer.Item = Item;
 
     return Outlayer;
@@ -3808,29 +2963,25 @@ jQuery.extend(jQuery.easing, {
 }));
 
 
-/**
- * Isotope LayoutMode
- */
-
 (function(window, factory) {
-    // universal module definition
-    /* jshint strict: false */
-    /*globals define, module, require */
+
+
+
     if (typeof define == 'function' && define.amd) {
-        // AMD
+
         define('isotope/js/layout-mode', [
                 'get-size/get-size',
                 'outlayer/outlayer'
             ],
             factory);
     } else if (typeof module == 'object' && module.exports) {
-        // CommonJS
+
         module.exports = factory(
             require('get-size'),
             require('outlayer')
         );
     } else {
-        // browser global
+
         window.Isotope = window.Isotope || {};
         window.Isotope.LayoutMode = factory(
             window.getSize,
@@ -3841,10 +2992,10 @@ jQuery.extend(jQuery.easing, {
 }(window, function factory(getSize, Outlayer) {
     'use strict';
 
-    // layout mode class
+
     function LayoutMode(isotope) {
         this.isotope = isotope;
-        // link properties
+
         if (isotope) {
             this.options = isotope.options[this.namespace];
             this.element = isotope.element;
@@ -3855,10 +3006,7 @@ jQuery.extend(jQuery.easing, {
 
     var proto = LayoutMode.prototype;
 
-    /**
-     * some methods should just defer to default Outlayer method
-     * and reference the Isotope instance as `this`
-     **/
+
     var facadeMethods = [
         '_resetLayout',
         '_getItemLayoutPosition',
@@ -3875,19 +3023,19 @@ jQuery.extend(jQuery.easing, {
         };
     });
 
-    // -----  ----- //
 
-    // for horizontal layout modes, check vertical size
+
+
     proto.needsVerticalResizeLayout = function() {
-        // don't trigger if size did not change
+
         var size = getSize(this.isotope.element);
-        // check that this.size and size are there
-        // IE8 triggers resize on body size change, so they might not be
+
+
         var hasSizes = this.isotope.size && size;
         return hasSizes && size.innerHeight != this.isotope.size.innerHeight;
     };
 
-    // ----- measurements ----- //
+
 
     proto._getMeasurement = function() {
         this.isotope._getMeasurement.apply(this, arguments);
@@ -3901,24 +3049,19 @@ jQuery.extend(jQuery.easing, {
         this.getSegmentSize('row', 'Height');
     };
 
-    /**
-     * get columnWidth or rowHeight
-     * segment: 'column' or 'row'
-     * size 'Width' or 'Height'
-     **/
     proto.getSegmentSize = function(segment, size) {
         var segmentName = segment + size;
         var outerSize = 'outer' + size;
-        // columnWidth / outerWidth // rowHeight / outerHeight
+
         this._getMeasurement(segmentName, outerSize);
-        // got rowHeight or columnWidth, we can chill
+
         if (this[segmentName]) {
             return;
         }
-        // fall back to item of first element
+
         var firstItemSize = this.getFirstItemSize();
         this[segmentName] = firstItemSize && firstItemSize[outerSize] ||
-            // or size of container
+
             this.isotope.size['inner' + size];
     };
 
@@ -3927,7 +3070,7 @@ jQuery.extend(jQuery.easing, {
         return firstItem && firstItem.element && getSize(firstItem.element);
     };
 
-    // ----- methods that should reference isotope ----- //
+
 
     proto.layout = function() {
         this.isotope.layout.apply(this.isotope, arguments);
@@ -3938,7 +3081,7 @@ jQuery.extend(jQuery.easing, {
         this.size = this.isotope.size;
     };
 
-    // -------------------------- create -------------------------- //
+
 
     LayoutMode.modes = {};
 
@@ -3951,13 +3094,13 @@ jQuery.extend(jQuery.easing, {
         Mode.prototype = Object.create(proto);
         Mode.prototype.constructor = Mode;
 
-        // default options
+
         if (options) {
             Mode.options = options;
         }
 
         Mode.prototype.namespace = namespace;
-        // register in Isotope
+
         LayoutMode.modes[namespace] = Mode;
 
         return Mode;
@@ -3967,33 +3110,27 @@ jQuery.extend(jQuery.easing, {
 
 }));
 
-/*!
- * Masonry v4.1.0
- * Cascading grid layout library
- * http://masonry.desandro.com
- * MIT License
- * by David DeSandro
- */
+
 
 (function(window, factory) {
-    // universal module definition
-    /* jshint strict: false */
-    /*globals define, module, require */
+
+
+
     if (typeof define == 'function' && define.amd) {
-        // AMD
+
         define('masonry/masonry', [
                 'outlayer/outlayer',
                 'get-size/get-size'
             ],
             factory);
     } else if (typeof module == 'object' && module.exports) {
-        // CommonJS
+
         module.exports = factory(
             require('outlayer'),
             require('get-size')
         );
     } else {
-        // browser global
+
         window.Masonry = factory(
             window.Outlayer,
             window.getSize
@@ -4004,11 +3141,11 @@ jQuery.extend(jQuery.easing, {
 
 
 
-    // -------------------------- masonryDefinition -------------------------- //
 
-    // create an Outlayer layout class
+
+
     var Masonry = Outlayer.create('masonry');
-    // isFitWidth -> fitWidth
+
     Masonry.compatOptions.fitWidth = 'isFitWidth';
 
     Masonry.prototype._resetLayout = function() {
@@ -4017,7 +3154,7 @@ jQuery.extend(jQuery.easing, {
         this._getMeasurement('gutter', 'outerWidth');
         this.measureColumns();
 
-        // reset column Y
+
         this.colYs = [];
         for (var i = 0; i < this.cols; i++) {
             this.colYs.push(0);
@@ -4028,60 +3165,60 @@ jQuery.extend(jQuery.easing, {
 
     Masonry.prototype.measureColumns = function() {
         this.getContainerWidth();
-        // if columnWidth is 0, default to outerWidth of first item
+
         if (!this.columnWidth) {
             var firstItem = this.items[0];
             var firstItemElem = firstItem && firstItem.element;
-            // columnWidth fall back to item of first element
+
             this.columnWidth = firstItemElem && getSize(firstItemElem).outerWidth ||
-                // if first elem has no width, default to size of container
+
                 this.containerWidth;
         }
 
         var columnWidth = this.columnWidth += this.gutter;
 
-        // calculate columns
+
         var containerWidth = this.containerWidth + this.gutter;
         var cols = containerWidth / columnWidth;
-        // fix rounding errors, typically with gutters
+
         var excess = columnWidth - containerWidth % columnWidth;
-        // if overshoot is less than a pixel, round up, otherwise floor it
+
         var mathMethod = excess && excess < 1 ? 'round' : 'floor';
         cols = Math[mathMethod](cols);
         this.cols = Math.max(cols, 1);
     };
 
     Masonry.prototype.getContainerWidth = function() {
-        // container is parent if fit width
+
         var isFitWidth = this._getOption('fitWidth');
         var container = isFitWidth ? this.element.parentNode : this.element;
-        // check that this.size and size are there
-        // IE8 triggers resize on body size change, so they might not be
+
+
         var size = getSize(container);
         this.containerWidth = size && size.innerWidth;
     };
 
     Masonry.prototype._getItemLayoutPosition = function(item) {
         item.getSize();
-        // how many columns does this brick span
+
         var remainder = item.size.outerWidth % this.columnWidth;
         var mathMethod = remainder && remainder < 1 ? 'round' : 'ceil';
-        // round if off by 1 pixel, otherwise use ceil
+
         var colSpan = Math[mathMethod](item.size.outerWidth / this.columnWidth);
         colSpan = Math.min(colSpan, this.cols);
 
         var colGroup = this._getColGroup(colSpan);
-        // get the minimum Y value from the columns
+
         var minimumY = Math.min.apply(Math, colGroup);
         var shortColIndex = colGroup.indexOf(minimumY);
 
-        // position the brick
+
         var position = {
             x: this.columnWidth * shortColIndex,
             y: minimumY
         };
 
-        // apply setHeight to necessary columns
+
         var setHeight = minimumY + item.size.outerHeight;
         var setSpan = this.cols + 1 - colGroup.length;
         for (var i = 0; i < setSpan; i++) {
@@ -4091,24 +3228,21 @@ jQuery.extend(jQuery.easing, {
         return position;
     };
 
-    /**
-     * @param {Number} colSpan - number of columns the element spans
-     * @returns {Array} colGroup
-     */
+
     Masonry.prototype._getColGroup = function(colSpan) {
         if (colSpan < 2) {
-            // if brick spans only one column, use all the column Ys
+
             return this.colYs;
         }
 
         var colGroup = [];
-        // how many different places could this brick fit horizontally
+
         var groupCount = this.cols + 1 - colSpan;
-        // for each group potential horizontal position
+
         for (var i = 0; i < groupCount; i++) {
-            // make an array of colY values for that one group
+
             var groupColYs = this.colYs.slice(i, i + colSpan);
-            // and get the max value of the array
+
             colGroup[i] = Math.max.apply(Math, groupColYs);
         }
         return colGroup;
@@ -4117,17 +3251,17 @@ jQuery.extend(jQuery.easing, {
     Masonry.prototype._manageStamp = function(stamp) {
         var stampSize = getSize(stamp);
         var offset = this._getElementOffset(stamp);
-        // get the columns that this stamp affects
+
         var isOriginLeft = this._getOption('originLeft');
         var firstX = isOriginLeft ? offset.left : offset.right;
         var lastX = firstX + stampSize.outerWidth;
         var firstCol = Math.floor(firstX / this.columnWidth);
         firstCol = Math.max(0, firstCol);
         var lastCol = Math.floor(lastX / this.columnWidth);
-        // lastCol should not go over if multiple of columnWidth #425
+
         lastCol -= lastX % this.columnWidth ? 0 : 1;
         lastCol = Math.min(this.cols - 1, lastCol);
-        // set colYs to bottom of the stamp
+
 
         var isOriginTop = this._getOption('originTop');
         var stampMaxY = (isOriginTop ? offset.top : offset.bottom) +
@@ -4152,7 +3286,7 @@ jQuery.extend(jQuery.easing, {
 
     Masonry.prototype._getContainerFitWidth = function() {
         var unusedCols = 0;
-        // count unused columns
+
         var i = this.cols;
         while (--i) {
             if (this.colYs[i] !== 0) {
@@ -4160,7 +3294,7 @@ jQuery.extend(jQuery.easing, {
             }
             unusedCols++;
         }
-        // fit container to columns that have been used
+
         return (this.cols - unusedCols) * this.columnWidth - this.gutter;
     };
 
@@ -4175,22 +3309,7 @@ jQuery.extend(jQuery.easing, {
 }));
 
 
-/*
-     _ _      _       _
- ___| (_) ___| | __  (_)___
-/ __| | |/ __| |/ /  | / __|
-\__ \ | | (__|   < _ | \__ \
-|___/_|_|\___|_|\_(_)/ |___/
-                   |__/
 
- Version: 1.6.0
-  Author: Ken Wheeler
- Website: http://kenwheeler.github.io
-    Docs: http://kenwheeler.github.io/slick
-    Repo: http://github.com/kenwheeler/slick
-  Issues: http://github.com/kenwheeler/slick/issues
-
- */
 ! function(a) { "use strict"; "function" == typeof define && define.amd ? define(["jquery"], a) : "undefined" != typeof exports ? module.exports = a(require("jquery")) : a(jQuery) }(function(a) {
     "use strict";
     var b = window.Slick || {};

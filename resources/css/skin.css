@@ -2,11 +2,11 @@
     border: 10px solid #fff
 }
 
-.footer-icons .porto-sicon-description>span:first-child {
+.footer-icons .sicon-description>span:first-child {
     display: block
 }
 
-.porto-sicon-box {
+.sicon-box {
     margin-bottom: 0!important
 }
 
@@ -290,7 +290,7 @@ textarea {
     height: 100px
 }
 
-.porto-sicon-description span a {
+.sicon-description span a {
     color: #fff;
     text-decoration: none
 }
@@ -496,10 +496,10 @@ li {
     .custom-font-size-1 {
         line-height: 1
     }
-    .custom-box-shadow .slick-slide:first-child .porto-ultimate-content-box {
+    .custom-box-shadow .slick-slide:first-child .ultimate-content-box {
         margin-right: 0!important
     }
-    .footer-icons .porto-sicon-description span:last-child {
+    .footer-icons .sicon-description span:last-child {
         font-size: 17px!important
     }
     .vc_progress_bar .progress-label {

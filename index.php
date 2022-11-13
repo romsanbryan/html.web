@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <title>Romsanbryan</title>
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon_120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon_76x76.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon_152x152.png">
-    <link rel="icon" href="myAvatar-150x150.png" sizes="32x32" />
-    <link rel="icon" href="myAvatar-300x300.png" sizes="192x192" />
-    <link rel="apple-touch-icon-precomposed" href="myAvatar-300x300.png" />
+    <link rel="apple-touch-icon" href="resources/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="resources/img/apple-touch-icon_120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="resources/img/apple-touch-icon_76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="resources/img/apple-touch-icon_152x152.png">
+    <link rel="icon" href="resources/img/myAvatar-150x150.png" sizes="32x32" />
+    <link rel="icon" href="resources/img/myAvatar-300x300.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="resources/img/myAvatar-300x300.png" />
 
     <link rel="stylesheet" href="resources/css/style.css">
     <link rel='stylesheet' href='resources/css/boostrap.css' type='text/css' media='all' />
@@ -20,10 +20,6 @@
     <link rel='stylesheet' href='resources/css/fonts.css' type='text/css' media='all' />
     <link rel='stylesheet' href='resources/css/theme.css' type='text/css' media='all' />
     <link rel='stylesheet' href='resources/css/skin.css' type='text/css' media='all' />
-
-    <script type='text/javascript' src='resources/js/jquery.js'></script>
-    <script type='text/javascript' src='resources/js/plugins.js'></script>
-
 </head>
 
 <body>
@@ -70,7 +66,7 @@
                                     <!-- <div id="about-me" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="http://romsanbryan.x10host.com/wp-content/uploads/2017/02/about-me-bg-1.jpg" class="vc_row wpb_row row test headCss vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving"> -->
                                     <div class="col-md-4">
                                         <div class="custom-border custom-image-position-2 custom-box-shadow-4">
-                                            <img width="900" height="675" src="me.jpg" alt="" sizes="(max-width: 900px) 100vw, 900px" />
+                                            <img width="900" height="675" src="resources/img/me.jpg" alt="" sizes="(max-width: 900px) 100vw, 900px" />
                                         </div>
                                     </div>
 
@@ -85,28 +81,27 @@
                                                         </p> -->
                                         <!-- <p><span style="color: #b7b7b7;"><span style="color: #ffffff;"><strong>EDUCACION: </strong></span>IES ANTONIO GALA <a class="btn btn-tertiary text-uppercase custom-btn-style-1 text-xs ml-sm" href="#education" data-hash="">Ver más</a></span> -->
                                         </p>
-<br />
-                                        <a class="porto-sicon-box-link" href="cv.pdf" target='_blank'>
-                                            <div class="porto-sicon-box left-icon">
-                                                <div class="porto-sicon-left">
-                                                    <div id="porto-icon-162870840636d39d480909" class="porto-just-icon-wrapper  ">
+                                        <br />
+                                        <a  href="resources/pdf/cv.pdf" target='_blank'>
+                                            <div class="left-icon">
+                                                <div class="sicon-left">
+                                                    <div >
                                                         <div class="align-icon" style="text-align:center;">
-                                                            <div class="porto-icon none " style="color:#ffd93e;font-size:22px;display:inline-block;">
+                                                            <div class="icon " style="color:#ffd93e;font-size:22px;display:inline-block;">
                                                                 <i class="icon-cloud-download"></i>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="porto-sicon-body">
-                                                    <div class="porto-sicon-description"><span style="font-size: 17px; color: white;">Descargar Resumen</span></div>
+                                                <div class="sicon-body">
+                                                    <div class="sicon-description"><span style="font-size: 17px; color: white;">Descargar Resumen</span></div>
                                                 </div>
                                             </div>
                                         </a>
-
                                     </div>
                                     <div class="col-md-3">
 
-                                        <img width="400" height="400" src="avatar" sizes="(max-width: 400px) 100vw, 400px" />
+                                        <img width="400" height="400" src="resources/img/avatar" sizes="(max-width: 400px) 100vw, 400px" />
                                     </div>
                                 </div>
 
@@ -195,17 +190,17 @@
                                     <div class=" vc_column_container col-md-12">
                                         <div>
                                             <h1 class="align-left">EDUCACIÓN</h1>
-                                            <div id="porto-carousel-1529727540636d39d48ed59" class="porto-carousel-wrapper">
+                                            <div id="carousel-1529727540636d39d48ed59" class="carousel-wrapper">
 
-                                                <div class="porto-ultimate-carousel carrouselScript ">
+                                                <div class="ultimate-carousel carrouselScript ">
                                                     <div>
-                                                        <div class="porto-ultimate-content-box " style="background-color:#ffffff;box-shadow: px px 3px px #000000 ;padding-top:40px;padding-bottom:30px;padding-left:40px;" data-hover_box_shadow="none" data-bg="#ffffff">
+                                                        <div class="ultimate-content-box " style="background-color:#ffffff;box-shadow: px px 3px px #000000 ;padding-top:40px;padding-bottom:30px;padding-left:40px;" data-hover_box_shadow="none" data-bg="#ffffff">
                                                             <div style="color:#ffd93e;font-size:32px;display:inline-block;">
                                                                 <i class="icon-graduation"></i>
                                                             </div>
 
-                                                            <div class="porto-u-heading" style="text-align:left">
-                                                                <div class="porto-u-main-heading">
+                                                            <div class="u-heading" style="text-align:left">
+                                                                <div class="u-main-heading">
                                                                     <h2 style="font-weight: bold;">Técnico superior en desarrollador de aplicaciones multiplataformas</h2>
 
                                                                     <p style="text-align: left; margin-bottom: 5px;">Primera promoción del C.F.G.S. Desarrollo de Aplicaciones Multiplataforma en IES Antonio Gala, (Palma del Rio, Córdoba).</p>
@@ -216,14 +211,14 @@
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <div class="porto-ultimate-content-box " style="background-color:#ffffff;box-shadow: px px 3px px #000000 ;
+                                                        <div class="ultimate-content-box " style="background-color:#ffffff;box-shadow: px px 3px px #000000 ;
                                                         padding-top:40px;padding-bottom:30px;padding-left:40px;" data-hover_box_shadow="none" data-bg="#ffffff">
                                                             <div style="color:#ffd93e;font-size:32px;display:inline-block;">
                                                                 <i class="icon-graduation"></i>
                                                             </div>
 
-                                                            <div class="porto-u-heading" style="text-align:left">
-                                                                <div class="porto-u-main-heading">
+                                                            <div class="u-heading" style="text-align:left">
+                                                                <div class="u-main-heading">
                                                                     <h2 style="font-weight: bold;">Técnico superior en desarrollador de aplicaciones multiplataformas</h2>
 
                                                                     <p style="text-align: left; margin-bottom: 5px;">Primera promoción del C.F.G.S. Desarrollo de Aplicaciones Multiplataforma en IES Antonio Gala, (Palma del Rio, Córdoba).</p>
@@ -234,14 +229,14 @@
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <div class="porto-ultimate-content-box " style="background-color:#ffffff;box-shadow: px px 3px px #000000;
+                                                        <div class="ultimate-content-box " style="background-color:#ffffff;box-shadow: px px 3px px #000000;
                                                         padding-top:40px;padding-bottom:30px;padding-left:40px;" data-hover_box_shadow="none" data-bg="#ffffff">
                                                             <div style="color:#ffd93e;font-size:32px;display:inline-block;">
                                                                 <i class="icon-graduation"></i>
                                                             </div>
 
-                                                            <div class="porto-u-heading" style="text-align:left">
-                                                                <div class="porto-u-main-heading">
+                                                            <div class="u-heading" style="text-align:left">
+                                                                <div class="u-main-heading">
                                                                     <h2 style="font-weight: bold;">Técnico superior en desarrollador de aplicaciones multiplataformas</h2>
 
                                                                     <p style="text-align: left; margin-bottom: 5px;">Primera promoción del C.F.G.S. Desarrollo de Aplicaciones Multiplataforma en IES Antonio Gala, (Palma del Rio, Córdoba).</p>
@@ -279,72 +274,71 @@
                                     <div class="footer-icons vc_column_container col-md-12 col-xl-6 col-lg-6 footerCss">
                                         <div class="wpb_wrapper vc_column-inner">
                                             <div class="">
-                                                <a class="porto-sicon-box-link" href="mailto:romsanbryan@gmail.com">
-                                                    <div class="porto-sicon-box left-icon">
-                                                        <div class="porto-sicon-left">
+                                                <a class="sicon-box-link" href="mailto:romsanbryan@gmail.com">
+                                                    <div class="sicon-box left-icon">
+                                                        <div class="sicon-left">
                                                             <div id="">
                                                                 <div class="align-icon" style="text-align:center;">
-                                                                    <div class="porto-icon advanced " style="color:#ffffff;background:#1f1e1c;border-style:solid;border-color:#333333;border-width:1px;width:40px;height:40px;line-height:40px;border-radius:0px;font-size:20px;display:inline-block;">
+                                                                    <div class="icon advanced " style="color:#ffffff;background:#1f1e1c;border-style:solid;border-color:#333333;border-width:1px;width:40px;height:40px;line-height:40px;border-radius:0px;font-size:20px;display:inline-block;">
                                                                         <i class="icon-envelope"></i>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="porto-sicon-body">
-                                                            <div class="porto-sicon-description"><span style="color: #b7b7b7; font-size: 11px;">EMAIL</span> <span style="color: #ffffff; font-size: 24px; font-weight: 300;">romsanbryan@gmail.com</span></div>
+                                                        <div class="sicon-body">
+                                                            <div class="sicon-description"><span style="color: #b7b7b7; font-size: 11px;">EMAIL</span> <span style="color: #ffffff; font-size: 24px; font-weight: 300;">romsanbryan@gmail.com</span></div>
                                                         </div>
                                                     </div>
                                                 </a>
                                             </div>
                                             <div class="">
-                                                <a class="porto-sicon-box-link" href="tel:+3464690977">
-                                                    <div class="porto-sicon-box left-icon">
-                                                        <div class="porto-sicon-left">
+                                                <a class="sicon-box-link" href="tel:+3464690977">
+                                                    <div class="sicon-box left-icon">
+                                                        <div class="sicon-left">
                                                             <div>
                                                                 <div class="align-icon" style="text-align:center;">
-                                                                    <div class="porto-icon advanced " style="color:#ffffff;background:#1f1e1c;border-style:solid;border-color:#333333;border-width:1px;width:40px;height:40px;line-height:40px;border-radius:0px;font-size:20px;display:inline-block;">
+                                                                    <div class="icon advanced " style="color:#ffffff;background:#1f1e1c;border-style:solid;border-color:#333333;border-width:1px;width:40px;height:40px;line-height:40px;border-radius:0px;font-size:20px;display:inline-block;">
                                                                         <i class="icon-phone"></i>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="porto-sicon-body">
-                                                            <div class="porto-sicon-description"><span style="color: #b7b7b7; font-size: 11px;">TELEFONO</span> <span style="color: #ffffff; font-size: 24px; font-weight: 300;">+34 646-902-977</span></div>
+                                                        <div class="sicon-body">
+                                                            <div class="sicon-description"><span style="color: #b7b7b7; font-size: 11px;">TELEFONO</span> <span style="color: #ffffff; font-size: 24px; font-weight: 300;">+34 646-902-977</span></div>
                                                         </div>
                                                     </div>
                                                 </a>
                                             </div>
                                             <div class="">
-                                                <div class="porto-sicon-box left-icon">
-                                                    <div class="porto-sicon-left">
+                                                <div class="sicon-box left-icon">
+                                                    <div class="sicon-left">
                                                         <div>
                                                             <div class="align-icon" style="text-align:center;">
-                                                                <div class="porto-icon advanced " style="color:#ffffff;background:#1f1e1c;border-style:solid;border-color:#333333;border-width:1px;width:40px;height:40px;line-height:40px;border-radius:0px;font-size:20px;display:inline-block;">
+                                                                <div class="icon advanced " style="color:#ffffff;background:#1f1e1c;border-style:solid;border-color:#333333;border-width:1px;width:40px;height:40px;line-height:40px;border-radius:0px;font-size:20px;display:inline-block;">
                                                                     <i class="icon-social-skype"></i>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="porto-sicon-body">
-                                                        <div class="porto-sicon-description"><span style="color: #b7b7b7; font-size: 11px;">SKYPE</span> <span style="color: #ffffff; font-size: 24px; font-weight: 300;">ROMSANBRYAN</span></div>
+                                                    <div class="sicon-body">
+                                                        <div class="sicon-description"><span style="color: #b7b7b7; font-size: 11px;">SKYPE</span> <span style="color: #ffffff; font-size: 24px; font-weight: 300;">ROMSANBRYAN</span></div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="">
-                                                <div class="porto-sicon-box left-icon">
-                                                    <div class="porto-sicon-left">
+                                                <div class="sicon-box left-icon">
+                                                    <div class="sicon-left">
                                                         <div>
                                                             <div class="align-icon" style="text-align:center;">
-                                                                <div class="porto-icon advanced " style="color:#ffffff;background:#1f1e1c;border-style:solid;border-color:#333333;border-width:1px;width:40px;height:40px;line-height:40px;border-radius:0px;font-size:20px;display:inline-block;">
+                                                                <div class="icon advanced " style="color:#ffffff;background:#1f1e1c;border-style:solid;border-color:#333333;border-width:1px;width:40px;height:40px;line-height:40px;border-radius:0px;font-size:20px;display:inline-block;">
                                                                     <i class="icon-share"></i>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="porto-sicon-body">
-                                                        <div class="porto-sicon-description"><span style="color: #b7b7b7; font-size: 11px;">FOLLOW ME</span> <span style="color: #ffffff; font-size: 24px; font-weight: 300;"> <a href="http://www.facebook.com">Facebook</a><a class="" href="http://www.twitter.com/romsanbryan">Twitter</a><a href="http://www.linkedin.com/in/romsanbryan">Linkedin</a> </span></div>
+                                                    <div class="sicon-body">
+                                                        <div class="sicon-description"><span style="color: #b7b7b7; font-size: 11px;">FOLLOW ME</span> <span style="color: #ffffff; font-size: 24px; font-weight: 300;"> <a href="http://www.facebook.com">Facebook</a><a class="" href="http://www.twitter.com/romsanbryan">Twitter</a><a href="http://www.linkedin.com/in/romsanbryan">Linkedin</a> </span></div>
                                                         <!-- class="custom-both-side-border"  para separar -->
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -360,59 +354,14 @@
         </div>
     </div>
 
-    <!-- BRYAN-->
-    <script type='text/javascript'>
-        var js_porto_vars = {};
-    </script>
-
+    <script type='text/javascript' src='resources/js/jquery.js'></script>
+    <script type='text/javascript' src='resources/js/plugins.js'></script>
     <script type='text/javascript' src='resources/js/composer.js'></script>
     <script type='text/javascript' src='resources/js/theme.js'></script>
+    <script type='text/javascript' src='resources/js/util.js'></script>
 
     <script type="text/javascript">
-        jQuery('#aboutMeMoreBtn').on('click', function() {
-            jQuery(this).hide();
-            jQuery('#aboutMeMore').toggleClass('about-me-more-visible');
-        });
-
-        // carrousel
-        jQuery(document).ready(function($) {
-            $('.carrouselScript').slick({
-                dots: true,
-                autoplaySpeed: 5000,
-                speed: 300,
-                infinite: false,
-                arrows: false,
-                slidesToScroll: 2,
-                slidesToShow: 2,
-                swipe: true,
-                draggable: true,
-                touchMove: true,
-                pauseOnHover: true,
-                responsive: [{
-                    breakpoint: 1025,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                    }
-                }, {
-                    breakpoint: 769,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                }, {
-                    breakpoint: 481,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }],
-                pauseOnDotsHover: true,
-                customPaging: function(slider, i) {
-                    return '<i type="button" style="color:#2e353e;" class="fa fa-circle-o" data-role="none"></i>';
-                },
-            });
-        });
+ 
     </script>
 
 </body>

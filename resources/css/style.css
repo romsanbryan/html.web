@@ -1,5 +1,3 @@
-/* rel="stylesheet" property="stylesheet" */
-
 .ms-loading-container .ms-loading,
 .ms-slide .ms-slide-loading {
     background-image: none !important;
@@ -33,9 +31,6 @@
     width: 100px;
 }
 
-
-/* */
-
 #about-me {
     overflow: visible !important;
 }
@@ -45,9 +40,6 @@
     padding: 0 !important;
     margin: 0 !important;
 }
-
-
-/* data-type="vc_shortcodes-custom-css" */
 
 .headCss {
     padding-top: 115px !important;

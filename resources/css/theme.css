@@ -1,4 +1,4 @@
-.porto-carousel-wrapper>div:first-child {
+.carousel-wrapper>div:first-child {
     position: relative;
     display: block;
     margin: 0;
@@ -101,13 +101,6 @@ input[type=submit] {
     line-height: 1.42857
 }
 
-.flag,
-[class*=flag-] {
-    width: 16px;
-    height: 11px;
-    background: url(../images/flags.png) no-repeat
-}
-
 .flag.flag-england,
 [class*=flag-].flag-england {
     background-position: -240px -33px
@@ -118,35 +111,35 @@ input[type=submit] {
     background-position: -160px -154px
 }
 
-.left-icon .porto-sicon-left {
+.left-icon .sicon-left {
     display: table-cell;
     vertical-align: top
 }
 
-.left-icon .porto-sicon-left .porto-icon,
-.left-icon .porto-sicon-left .porto-sicon-img {
+.left-icon .sicon-left .icon,
+.left-icon .sicon-left .sicon-img {
     margin-right: 20px
 }
 
-.left-icon .porto-sicon-body {
+.left-icon .sicon-body {
     display: table-cell;
     vertical-align: middle
 }
 
-.left-icon .porto-sicon-description,
-.left-icon .porto-sicon-header {
+.left-icon .sicon-description,
+.left-icon .sicon-header {
     float: left;
     width: 100%
 }
 
 @media (max-width:768px) {
-    button.porto-btn-small {
+    button.btn-small {
         padding: 6px 12px
     }
-    button.porto-btn-normal {
+    button.btn-normal {
         padding: 10px 24px
     }
-    button.porto-btn-large {
+    button.btn-large {
         padding: 12px 36px
     }
 }
@@ -198,13 +191,13 @@ input[type=submit] {
     transform: translateY(100%)
 }
 
-.porto-carousel-wrapper {
+.carousel-wrapper {
     position: relative;
     margin-bottom: 35px
 }
 
-.porto-carousel-wrapper .slick-next,
-.porto-carousel-wrapper .slick-prev {
+.carousel-wrapper .slick-next,
+.carousel-wrapper .slick-prev {
     position: absolute;
     top: 50%;
     margin: 0;
@@ -394,8 +387,8 @@ input[type=submit] {
 #infscr-loading .infinite-loading,
 .master-slider .ms-loading-container .ms-loading,
 .master-slider .ms-slide .ms-slide-loading,
-.porto-ajax-loading,
-.porto-carousel-wrapper>div:first-child>.porto-item-wrap:first-child,
+.ajax-loading,
+.carousel-wrapper>div:first-child>.item-wrap:first-child,
 .slick-slider .slick-loading .slick-list,
 .yith-wcan-loading {
     background-image: none;
@@ -409,8 +402,8 @@ input[type=submit] {
 #infscr-loading .infinite-loading:before,
 .master-slider .ms-loading-container .ms-loading:before,
 .master-slider .ms-slide .ms-slide-loading:before,
-.porto-ajax-loading:before,
-.porto-carousel-wrapper>div:first-child>.porto-item-wrap:first-child:before,
+.ajax-loading:before,
+.carousel-wrapper>div:first-child>.item-wrap:first-child:before,
 .slick-slider .slick-loading .slick-list:before,
 .yith-wcan-loading:before {
     content: " ";
@@ -437,7 +430,6 @@ input[type=submit] {
 }
 
 .carousel-areas {
-    background: transparent url(../images/patterns/stripes.png) repeat 0 0;
     padding-top: 10px;
     padding-left: 10px!important;
     padding-right: 10px!important;
@@ -452,16 +444,16 @@ input[type=submit] {
     padding-right: 0!important
 }
 
-.carousel-areas .porto-carousel-wrapper {
+.carousel-areas .carousel-wrapper {
     margin-bottom: 10px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .2)
 }
 
-.carousel-areas .porto-carousel-wrapper .slick-prev {
+.carousel-areas .carousel-wrapper .slick-prev {
     left: -50px
 }
 
-.carousel-areas .porto-carousel-wrapper .slick-next {
+.carousel-areas .carousel-wrapper .slick-next {
     right: -50px
 }
 
@@ -696,46 +688,46 @@ section.timeline .timeline-box.right:after {
 }
 
 @media (max-width:991px) {
-    .porto-concept {
+    .concept {
         background: 0 0
     }
-    .porto-concept .project-image {
+    .concept .project-image {
         margin: 60px auto 0 auto
     }
-    .porto-concept .process-image {
+    .concept .process-image {
         margin-top: 60px
     }
 }
 
 @media (max-width:575px) {
-    .porto-concept .project-image {
+    .concept .project-image {
         background-position: 0 0;
         margin-left: auto;
         max-width: 160px;
         max-height: 250px
     }
-    .porto-concept .fc-slideshow {
+    .concept .fc-slideshow {
         max-height: 145px;
         max-width: 145px
     }
-    .porto-concept .fc-slideshow img {
+    .concept .fc-slideshow img {
         max-height: 145px;
         max-width: 145px
     }
 }
 
 @media (max-width:722px) {
-    .csstransforms3d .porto-diamonds,
-    .porto-diamonds {
+    .csstransforms3d .diamonds,
+    .diamonds {
         max-width: 245px;
         padding-left: 0
     }
-    .porto-diamonds>li {
+    .diamonds>li {
         margin-right: 0;
         margin-bottom: 130px;
         clear: both
     }
-    .porto-diamonds>li:last-child {
+    .diamonds>li:last-child {
         margin-bottom: 50px;
         margin-right: 0;
         margin-top: 0;
