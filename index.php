@@ -18,14 +18,15 @@
     <link rel="stylesheet" href="resources/css/style.css">
     <link rel='stylesheet' id='porto-bootstrap-css' href='resources/css/porto-boostrap.css' type='text/css' media='all' />
     <link rel='stylesheet' id='porto-plugins-css' href='resources/css/porto-plugin.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='porto-google-fonts-css' href='resources/css/porto-google-fonts.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='porto-theme-css' href='resources/css/porto-theme.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='porto-skin-css' href='resources/css/porto-skin.css' type='text/css' media='all' />
+    
+    <link rel='stylesheet' id='porto-google-fonts-css' href='resources/css/fonts.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='porto-theme-css' href='resources/css/theme.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='porto-skin-css' href='resources/css/skin.css' type='text/css' media='all' />
 
     <script type='text/javascript' src='resources/js/jquery.js'></script>
     <script type='text/javascript' src='resources/js/porto_plugins.js'></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <link rel="stylesheet" href="resources/css/icons.css">
 
 
 </head>

@@ -118,10 +118,6 @@ input[type=submit] {
     background-position: -160px -154px
 }
 
-.porto-sicon-box.left-icon {
-    display: inline-block
-}
-
 .left-icon .porto-sicon-left {
     display: table-cell;
     vertical-align: top
@@ -187,130 +183,12 @@ input[type=submit] {
     cursor: pointer
 }
 
-.slick-dots li button {
-    border: 0;
-    background: 0 0;
-    display: block;
-    height: 20px;
-    width: 20px;
-    outline: 0;
-    line-height: 0;
-    font-size: 0;
-    color: transparent;
-    padding: 5px;
-    cursor: pointer
-}
-
-.slick-list {
-    position: relative;
-    overflow: hidden;
-    display: block;
-    margin: 0;
-    padding: 0
-}
-
-.slick-dots li button:hover:before,
-.slick-dots li button:focus:before {
-    opacity: 1
-}
-
-.slick-list:focus {
-    outline: none
-}
-
-.slick-loading .slick-list {
-    background: #fff url("../images/AjaxLoader.gif") center center no-repeat
-}
-
-.slick-list.dragging {
-    cursor: pointer;
-    cursor: hand
-}
-
-.slick-slider .slick-list,
-.slick-track,
-.slick-slide,
-.slick-slide img {
-    -webkit-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0)
-}
-
-.slick-track {
-    position: relative;
-    left: 0;
-    top: 0;
-    display: block;
-    zoom: 1
-}
-
-.slick-track:before,
-.slick-track:after {
-    content: "";
-    display: table
-}
-
-.slick-track:after {
-    clear: both
-}
-
-.slick-loading .slick-track {
-    visibility: hidden
-}
-
-.slick-slide {
-    float: left;
-    height: 100%;
-    min-height: 1px;
-    display: none
-}
-
-.slick-slide img {
-    display: block
-}
-
-.slick-slide.slick-loading img {
-    display: none
-}
-
-.slick-slide.dragging img {
-    pointer-events: none
-}
-
-.slick-initialized .slick-slide {
-    display: block;
-    outline: none
-}
-
-.slick-loading .slick-slide {
-    visibility: hidden
-}
-
-.slick-vertical .slick-slide {
-    display: block;
-    height: auto;
-    border: 1px solid transparent
-}
-
 .slick-prev,
 .slick-next {
     line-height: 0;
     padding: 0;
     border: none;
     outline: none
-}
-
-.slick-prev:hover,
-.slick-prev:focus,
-.slick-prev:active,
-.slick-next:hover,
-.slick-next:focus,
-.slick-next:active {
-    outline: none;
-    background: transparent;
-    color: transparent;
-    -webkit-box-shadow: none;
-    box-shadow: none
 }
 
 .slick-dots {
