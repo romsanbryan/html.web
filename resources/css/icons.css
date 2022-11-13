@@ -17,7 +17,9 @@
 .icon-social-skype,
 .icon-share,
 .icon-social-github,
+.icon-social-twitter,
 .icon-briefcase,
+.icon-social-linkedin,
 .icon-graduation {
     font-family: 'simple-line-icons';
     font-style: normal;
@@ -79,4 +81,12 @@
 
 .icon-graduation:before {
     content: "\e019";
+}
+
+.icon-social-twitter:before {
+    content: "\e009";
+}
+
+.icon-social-linkedin:before {
+    content: "\e60a";
 }

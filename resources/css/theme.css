@@ -101,13 +101,20 @@ input[type=submit] {
     line-height: 1.42857
 }
 
-.flag.flag-england,
-[class*=flag-].flag-england {
-    background-position: -240px -33px
+.flag,
+[class*='flag-'] {
+    width: 16px;
+    height: 11px;
+    background: url(../img/flags.png) no-repeat
+}
+
+.flag.flag-es,
+[class*='flag-'].flag-es {
+    background-position: -16px -44px
 }
 
 .flag.flag-us,
-[class*=flag-].flag-us {
+[class*='flag-'].flag-us {
     background-position: -160px -154px
 }
 
