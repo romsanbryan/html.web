@@ -7,18 +7,10 @@
 }
 
 .icon-phone,
-.icon-menu,
-.icon-arrow-up,
-.icon-home,
-.icon-eye,
-.icon-envelope-open,
 .icon-cloud-download,
 .icon-envelope,
-.icon-social-skype,
-.icon-share,
 .icon-social-github,
 .icon-social-twitter,
-.icon-briefcase,
 .icon-social-linkedin,
 .icon-graduation {
     font-family: 'simple-line-icons';
@@ -35,26 +27,6 @@
     content: "\e600";
 }
 
-.icon-menu:before {
-    content: "\e601";
-}
-
-.icon-arrow-up:before {
-    content: "\e607";
-}
-
-.icon-home:before {
-    content: "\e069";
-}
-
-.icon-eye:before {
-    content: "\e087";
-}
-
-.icon-envelope-open:before {
-    content: "\e01e";
-}
-
 .icon-cloud-download:before {
     content: "\e083";
 }
@@ -63,21 +35,11 @@
     content: "\e086";
 }
 
-.icon-social-skype:before {
-    content: "\e60f";
-}
-
-.icon-share:before {
-    content: "\e05b";
-}
 
 .icon-social-github:before {
     content: "\e60c";
 }
 
-.icon-briefcase:before {
-    content: "\e04b";
-}
 
 .icon-graduation:before {
     content: "\e019";
