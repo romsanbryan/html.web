@@ -195,7 +195,7 @@
 
     .exp-timeline .timeline-box:after,
     .exp-timeline .timeline-box:before {
-        display: block !important
+        left: -4.1%
     }
 
     .exp-timeline .timeline-box.right {
