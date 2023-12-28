@@ -175,7 +175,7 @@ a {
 
 .headCss>div>h1 {
     font-size: 60px;
-    color: var(--primary);
+    color: var(--primary) !important;
     font-weight: 400;
     font-style: normal
 }
