@@ -26,7 +26,6 @@ html {
     box-shadow: none !important
 }
 
-
 body {
     margin: 0;
     font-family: Open Sans;
@@ -144,6 +143,14 @@ a {
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px
+}
+
+.locale-switcher > label > input {
+    display: none;
+}
+  
+.locale-switcher > label  > img {
+    width: 50px;
 }
 
 .pb-100 {
