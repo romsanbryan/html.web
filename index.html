@@ -23,6 +23,7 @@
 
 <body>
     <div class="container">
+
         <div data-vc-full-width="true" class="headCss row">
             <div class="col-md-4">
                 <div class="imagen-position">
@@ -32,16 +33,27 @@
 
             <div class="col-md-4 col-xl-5 col-lg-5">
                 <h1 style="text-transform: none;">Bryan</h1>
-                <span>Analista programador</span>
+                <span  data-i18n-key="job">Analista programador</span>
                 <br /><br />
                 <a href="resources/pdf/cv.pdf">
                     <div class="icon">
-                        <i class="icon-cloud-download"></i> <span>Descargar Resumen</span>
+                        <i class="icon-cloud-download"></i> <span  data-i18n-key="download">Descargar Resumen</span>
                     </div>
                 </a>
             </div>
 
             <div class="col-md-3">
+                <div  data-i18n-switcher class="locale-switcher">
+                    <label>
+                        <input type="radio" name="country-flags" value="es" checked> <img src = "resources/img/es.png" />
+
+                    </label>
+                    
+                    <label>
+                        <input type="radio" name="country-flags" value="en"> <img src = "resources/img/en.png" />
+                    </label>
+        
+                </div>
                 <h4>
                     <a href="http://www.linkedin.com/in/romsanbryan">
                         <i class="icon-social-linkedin"></i>
@@ -52,6 +64,7 @@
                     <a href="http://www.twitter.com/romsanbryan">
                         <i class="icon-social-twitter"></i>
                     </a>
+                    
                 </h4>
                 <br />
                 <p><i class="icon-phone"> </i><span><a href="tel:+3464690977">+34 646 90 29 77</a></span></p>
@@ -63,15 +76,15 @@
         <div class="vc_row-full-width"></div>
 
         <div class="col-md-12">
-            <h1>Sobre mi</h1>
-            <p>
+            <h1 data-i18n-key="aboutme">Sobre mi</h1>
+            <p data-i18n-key="introduction">
                 Como desarrollador backend con más de 4 años de experiencia, he trabajado en proyectos
                 diversos que me han permitido perfeccionar mis habilidades técnicas en el desarrollo de
                 aplicaciones Java.
                 He colaborado en el diseño, desarrollo y mantenimiento de sistemas de backend sólidos y
                 escalables, optimizando el rendimiento y la eficiencia en cada etapa del proceso.
             </p>
-            <p>
+            <p data-i18n-key="hability">
                 Cuento también con experiencia en liderar, formar y dirigir equipos de desarrollo en
                 diferentes proyectos.
                 Mi enfoque en la gestión de proyectos se centra en la comunicación efectiva, la resolución
@@ -79,43 +92,42 @@
                 He demostrado habilidades sólidas en la coordinación de equipos multidisciplinarios y en la
                 gestión de recursos, lo que ha resultado en entregas exitosas y en plazo.
             </p>
-            <p>
+            <p data-i18n-key="vigour">
                 Mis principales fortalezas incluyen:
             <ul>
-                <li>Experiencia profunda en Java y en el desarrollo de sistemas backend.</li>
-                <li>Conocimiento en bases de datos relacionales y no relacionales.</li>
-                <li>Destrezas en la resolución de problemas y la toma de decisiones.</li>
-                <li>Liderazgo efectivo para motivar y guiar a equipos hacia el éxito.</li>
-                <li>
-                    Conocimiento en sistemas y tecnología AWS.</li>
-                <li>Conocimiento básico de angular</li>
+                <li data-i18n-key="vigour1">Experiencia profunda en Java y en el desarrollo de sistemas backend.</li>
+                <li data-i18n-key="vigour2">Conocimiento en bases de datos relacionales y no relacionales.</li>
+                <li data-i18n-key="vigour3">Destrezas en la resolución de problemas y la toma de decisiones.</li>
+                <li data-i18n-key="vigour4">Liderazgo efectivo para motivar y guiar a equipos hacia el éxito.</li>
+                <li data-i18n-key="vigour5">Conocimiento en sistemas y tecnología AWS.</li>
+                <li data-i18n-key="vigour6">Conocimiento básico de angular</li>
             </ul>
             </p>
         </div>
         <div class="row">
 
             <div class="col-md-12">
-                <h1>Experiencia</h1>
+                <h1 data-i18n-key="experience">Experiencia</h1>
                 <section class="timeline exp-timeline" id="exp-timeline">
                     <article class="timeline-box right ">
                         <div class="experience-info col-lg-3 col-md-5">
                             <p>
                                 <span class="company ">Redsys Salud <span>CÓRDOBA</span> </span>
                             </p>
-                            <span class="from">From <span>MAR 2020</span></span>
-                            <span class="to">To<span>ACT</span></span>
+                            <span class="from" data-i18n-key="from">From <span>MAR 2020</span></span>
+                            <span class="to" data-i18n-key="to">To<span>ACT</span></span>
                         </div>
                         <div class="experience-description col-lg-9 col-md-7">
-                            <h4>Analista programador</h4>
-                            <p>Análisis y desarrollo de aplicaciones para el sector de salud, toma de requerimientos,
+                            <h4 data-i18n-key="positionRedsys">Analista programador</h4>
+                            <p data-i18n-key="descriptionRedsys">Análisis y desarrollo de aplicaciones para el sector de salud, toma de requerimientos,
                                 reuniones con clientes, liderando y formando equipos. Realizando tareas de supervisión
                                 de código, para tener un código limpio (clean code) y representar los principios SOLID.
                             </p>
                             <ul>
-                                <li>Tecnologías principales: Java, SQL, AWS, Kubernete, Maven y Angular</li>
-                                <li>Herramientas de despliegue: Jenkins</li>
-                                <li>Herramientas de gestión de equipo: Trello y Jira</li>
-                                <li>Herramienta de control de versiones: GitLab</li>
+                                <li><span data-i18n-key="tecnologies">Tecnologías principales</span>: Java, SQL, AWS, kubernete, maven, angular</li>
+                                <li><span data-i18n-key="deploy">Herramientas de despliegue</span>: Jenkins</li>
+                                <li><span data-i18n-key="gestion">Herramientas de gestión de equipo</span>: Trello, Jira</li>
+                                <li><span data-i18n-key="versionControl">Herramienta de control de versiones</span>: GitLab</li>
                             </ul>
                         </div>
                     </article>
@@ -127,20 +139,20 @@
                                 <span class="company ">atmira, espacio de consultoria<span
                                         class="company-location  font-weight-normal ">CÓRDOBA</span> </span>
                             </p>
-                            <span class="from">From <span>OCT 2018</span></span>
-                            <span class="to">To<span>MAR 2020</span></span>
+                            <span class="from" data-i18n-key="from">From <span>OCT 2018</span></span>
+                            <span class="to" data-i18n-key="to">To<span>MAR 2020</span></span>
                         </div>
                         <div class="experience-description col-lg-9 col-md-7 background-color-light">
-                            <h4>Desarrollador de software</h4>
-                            <p>Desarrollo de aplicaciones para el sector de aseguradora, realizando labores de
+                            <h4 data-i18n-key="positionAtmira">Desarrollador de software</h4>
+                            <p data-i18n-key="descriptionAtmira">Desarrollo de aplicaciones para el sector de aseguradora, realizando labores de
                                 mantenimiento y creación de aplicaciones hasta completar su ciclo de vida y gestionando
                                 equipos.
                             </p>
                             <ul>
-                                <li>Tecnologías principales: Java 2EE, JSP, SQL, JUnit, Maven y Spring Batch.</li>
-                                <li>Herramientas de gestión de equipo: Jira</li>
-                                <li>Herramienta de control de versiones: SVN y GitLab</li>
-                                <li>Metodología: agile con scrum</li>
+                                <li><span data-i18n-key="tecnologies">Tecnologías principales</span>: Java 2EE, JSP, SQL, JUnit, maven, spring Batch</li>
+                                <li><span data-i18n-key="gestion">Herramientas de gestión de equipo</span>: Jira</li>
+                                <li><span data-i18n-key="versionControl">Herramienta de control de versiones</span>: SVN, GitLab</li>
+                                <li><span data-i18n-key="metodology">Metodología</span>: agile con scrum</li>
                             </ul>
                         </div>
                     </article>
@@ -151,17 +163,17 @@
                                 <span class="company ">El primero de la lista: Agencia de Marketing Online<span
                                         class="company-location  font-weight-normal ">CÓRDOBA</span> </span>
                             </p>
-                            <span class="from">From <span>MAR 2018</span></span>
-                            <span class="to">To<span>JUN 2018</span></span>
+                            <span class="from" data-i18n-key="from">From <span>MAR 2018</span></span>
+                            <span class="to" data-i18n-key="to">To<span>JUN 2018</span></span>
                         </div>
                         <div class="experience-description col-lg-9 col-md-7 background-color-light">
-                            <h4>Desarrollador web</h4>
-                            <p>Prácticas de C.F.G.S. Desarrollo de aplicaciones multiplataformas.</p>
-                            <p>Desarrollo y diseño de una página web desde la fase de diseño hasta la fase de
+                            <h4 data-i18n-key="positionEPDL">Desarrollador web</h4>
+                            <p data-i18n-key="subEPDL">Prácticas de C.F.G.S. Desarrollo de aplicaciones multiplataformas.</p>
+                            <p data-i18n-key="descriptionEPDL">Desarrollo y diseño de una página web desde la fase de diseño hasta la fase de
                                 despliegue.</p>
                             <ul>
-                                <li>Tecnologías principales: PHP, SQL Boostrap, JavaScript, wordpress e Ionic.</li>
-                                <li>Herramienta de control de versiones: Bitbucket</li>
+                                <li><span data-i18n-key="tecnologies">Tecnologías principales</span>: PHP, SQL Boostrap, JavaScript, wordpress e Ionic</li>
+                                <li><span data-i18n-key="gestion">Herramienta de control de versiones</span>: Bitbucket</li>
                             </ul>
                         </div>
                     </article>
@@ -173,13 +185,13 @@
                                         class="company-location  font-weight-normal ">Palma del Rio, CÓRDOBA</span>
                                 </span>
                             </p>
-                            <span class="from">From <span>MAR 2016</span></span>
-                            <span class="to">To<span>JUN 2016</span></span>
+                            <span class="from"  data-i18n-key="from">From <span>MAR 2016</span></span>
+                            <span class="to"  data-i18n-key="to">To<span>JUN 2016</span></span>
                         </div>
                         <div class="experience-description col-lg-9 col-md-7 background-color-light">
-                            <h4>Técnico informático</h4>
-                            <p>Prácticas de C.F.G.M. Sistemas microinformático y redes</p>
-                            <p>Montaje, mantenimiento y reparación de dispositivos informáticos (ordenadores, tablets,
+                            <h4  data-i18n-key="positionSI">Técnico informático</h4>
+                            <p  data-i18n-key="subSI">Prácticas de C.F.G.M. Sistemas microinformático y redes</p>
+                            <p  data-i18n-key="descriptionSI">Montaje, mantenimiento y reparación de dispositivos informáticos (ordenadores, tablets,
                                 móviles, cámaras de seguridad), instalación de sistemas operativos y software para
                                 empresas y particular, instalación de cables de red.</p>
 
@@ -192,19 +204,19 @@
         </div>
         <div class="row pb-100">
             <div class=" col-md-12">
-                <h1>FORMACIÓN</h1>
+                <h1 data-i18n-key="study">FORMACIÓN</h1>
                 <div class="carrouselScript ">
                     <div class="formacion">
                         <i class="icon-graduation"></i>
-                        <h2>Técnico superior en desarrollador de aplicaciones multiplataformas</h2>
-                        <p>C.F.G.S. Desarrollo de Aplicaciones Multiplataforma en IES Antonio Gala, (Palma del Rio,
+                        <h2  data-i18n-key="titleGS">Técnico superior en desarrollador de aplicaciones multiplataformas</h2>
+                        <p  data-i18n-key="descGS">C.F.G.S. Desarrollo de Aplicaciones Multiplataforma en IES Antonio Gala, (Palma del Rio,
                             Córdoba).</p>
                         <span>2016-2018</span>
                     </div>
                     <div class="formacion">
                         <i class="icon-graduation"></i>
-                        <h2>Técnico en sistema microinformaticos y redes</h2>
-                        <p>Título de C.F.G.M. en sistemas microinformaticos y redes en IES Antonio Gala (Palma del Rio,
+                        <h2  data-i18n-key="titleGM">Técnico en sistema microinformaticos y redes</h2>
+                        <p  data-i18n-key="descGM">Título de C.F.G.M. en sistemas microinformaticos y redes en IES Antonio Gala (Palma del Rio,
                             Córdoba).</p>
                         <span>2014-2016</span>
                     </div>
@@ -216,6 +228,7 @@
 
     <script type='text/javascript' src='resources/js/jquery.js'></script>
     <script type='text/javascript' src='resources/js/theme.js'></script>
+    <script src="resources/js/translate.js"></script>
 
 </body>
 
