@@ -214,6 +214,16 @@ a {
     color: var(--white);
     background-color: var(--primary) !important
 }
+.experience-info>div {
+    bottom: 13%;
+    position: absolute;
+}
+.experience-info>div>span {
+    opacity: .5;
+    text-transform: uppercase;
+    margin-right: 17px;
+    font-size: 11px
+}
 
 .experience-info>span {
     opacity: .5;
@@ -343,10 +353,12 @@ a {
     font-weight: 600
 }
 
-.from>span, .to>span {
-    display: block;
+.date {
+    
+    display: inline-block;
     text-transform: none;
-    font-size: 16px
+    font-size: 16px;
+    
 }
 
 .company {
