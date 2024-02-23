@@ -64,11 +64,26 @@
     }
 }
 
+
 @media (min-width:576px) {
 
     .container {
         max-width: 540px
     }
+
+    .modal {
+        --modal-modal-margin: 1.75rem;
+        --modal-modal-box-shadow: var(--modal-box-shadow);
+      }
+      .modal-dialog {
+        max-width: var(--modal-modal-width);
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .modal-sm {
+        --modal-modal-width: 300px;
+      }
+    
 }
 
 
@@ -234,6 +249,11 @@
         max-width: 75%
     }
 
+    .modal-lg,
+    .modal-xl {
+      --modal-modal-width: 800px;
+    }
+
 }
 
 @media (min-width:1200px) {
@@ -249,4 +269,9 @@
         max-width: 41.666667%
     }
 
+    .modal-xl {
+        --modal-modal-width: 1140px;
+      }
+
 }
+

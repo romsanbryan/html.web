@@ -33,6 +33,12 @@
     "titleGS": "Técnico superior en desarrollador de aplicaciones multiplataformas",
     "descGS": "C.F.G.S. Desarrollo de Aplicaciones Multiplataforma en IES Antonio Gala, (Palma del Rio, Córdoba).",
     "titleGM": "Técnico en sistema microinformaticos y redes",
-    "descGM": "Título de C.F.G.M. en sistemas microinformaticos y redes en IES Antonio Gala (Palma del Rio, Córdoba)."
+    "descGM": "Título de C.F.G.M. en sistemas microinformaticos y redes en IES Antonio Gala (Palma del Rio, Córdoba).",
+
+    "source": "Resource: ",
+    "aqueloThesis": "Thesis",
+    "aqueloText1": "It consists of an automated irrigation system controlled by Arduino using a PHP-based PWA. On the website you could see crop data, such as temperature and humidity in both the air and the ground, and activate/deactivate the irrigation system using a button.",
+    "aqueloText2": "All parameters were saved in a relational database to be recorded. Both temperature and humidity were recorded every hour while irrigation activation was recorded at the end, saving both the date and the active time."
+
 
 }

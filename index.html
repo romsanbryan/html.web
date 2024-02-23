@@ -16,13 +16,33 @@
     <link rel="stylesheet" href="resources/css/icons.css">
     <link rel='stylesheet' href='resources/css/fonts.css' type='text/css' media='all' />
 
-    <link rel="stylesheet" href="resources/css/boostrap.css">
     <link rel='stylesheet' href='resources/css/romsanbryan.css' type='text/css' media='all' />
-
+    <link rel="stylesheet" href="resources/css/boostrap.css">
 </head>
 
 <body>
     <div class="container">
+  
+  <!-- Modal -->
+  <div class="modal" id="aquelo">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class=" modal-content">
+
+        <div class="modal-header">
+          <h4 class="modal-title" >Aquelo</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div>
+                <img src="./resources/img/proyects/aquelo.png">
+            </div>
+            <p><span data-i18n-key="aqueloThesis"></span>. <span data-i18n-key="source"> </span>github</p> 
+            <p data-i18n-key="aqueloText1">Consistia en un sistema de riego automatizado y controlado por arduino mediante una PWA basada en PHP. En la web se podría ver datos de los cultivos, como la temperatura y la humedad tanto en el aire como en la tierra y mediante un botón activar/desactivar el sistema de riego.</p> 
+            <p data-i18n-key="aqueloText2">Todos los parámetros se guardaba en una base de datos relacional para tenerlo registrado. Tanto la temperatura como la humedad se registraban cada hora mientras que la activación de riego se registraba al finalizar, guardando tanto la fecha como el tiempo activo.</p>
+            <p><span data-i18n-key="tecnologies">Tecnologías principales</span>: PHP, SQL Boostrap, JavaScript, wordpress e Ionic</p>
+        </div>
+    </div></div>
+  </div>
 
         <div data-vc-full-width="true" class="headCss row">
             <div class="col-md-4">
@@ -45,14 +65,13 @@
             <div class="col-md-3">
                 <div  data-i18n-switcher class="locale-switcher">
                     <label>
-                        <input type="radio" name="country-flags" value="es" checked> <img src = "resources/img/es.png" />
-
+                        <input type="radio" name="country-flags" value="es" checked><span>ES</span>
                     </label>
-                    
+                    |
                     <label>
-                        <input type="radio" name="country-flags" value="en"> <img src = "resources/img/en.png" />
+                        <input type="radio" name="country-flags" value="en"><span>ENG</span>
                     </label>
-        
+
                 </div>
                 <h4>
                     <a href="http://www.linkedin.com/in/romsanbryan">
@@ -61,10 +80,6 @@
                     <a href="https://github.com/romsanbryan">
                         <i class="icon-social-github"></i>
                     </a>
-                    <a href="http://www.twitter.com/romsanbryan">
-                        <i class="icon-social-twitter"></i>
-                    </a>
-                    
                 </h4>
                 <br />
                 <p><i class="icon-phone"> </i><span><a href="tel:+3464690977">+34 646 90 29 77</a></span></p>
@@ -218,8 +233,13 @@
                         <i class="icon-graduation"></i>
                         <h2  data-i18n-key="titleGS">Técnico superior en desarrollador de aplicaciones multiplataformas</h2>
                         <p  data-i18n-key="descGS">C.F.G.S. Desarrollo de Aplicaciones Multiplataforma en IES Antonio Gala, (Palma del Rio,
-                            Córdoba).</p>
-                        <span>2016-2018</span>
+                            Córdoba).
+                        </p> 
+                        <span data-bs-toggle="modal" data-bs-target="#aquelo" class="proyectos" class="proyectos"> <span data-i18n-key="aqueloThesis">T.F.G</span></span>                 
+                        </p> 
+                  <span>2016-2018</span>
+                  <p>
+
                     </div>
                     <div class="formacion">
                         <i class="icon-graduation"></i>
@@ -231,8 +251,9 @@
                 </div>
             </div>
         </div>
-    </div>
 
+
+    </div>
 
     <script type='text/javascript' src='resources/js/jquery.js'></script>
     <script type='text/javascript' src='resources/js/theme.js'></script>

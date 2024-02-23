@@ -33,6 +33,13 @@
     "titleGS": "Técnico superior en desarrollador de aplicaciones multiplataformas",
     "descGS": "C.F.G.S. Desarrollo de Aplicaciones Multiplataforma en IES Antonio Gala, (Palma del Rio, Córdoba).",
     "titleGM": "Técnico en sistema microinformaticos y redes",
-    "descGM": "Título de C.F.G.M. en sistemas microinformaticos y redes en IES Antonio Gala (Palma del Rio, Córdoba)."
+    "descGM": "Título de C.F.G.M. en sistemas microinformaticos y redes en IES Antonio Gala (Palma del Rio, Córdoba).",
+
+    "source": "Código: ",
+    "aqueloThesis": "T.F.G",
+    "aqueloText1": "Consistia en un sistema de riego automatizado y controlado por arduino mediante una PWA basada en PHP. En la web se podría ver datos de los cultivos, como la temperatura y la humedad tanto en el aire como en la tierra y mediante un botón activar/desactivar el sistema de riego.",
+    "aqueloText2": "Todos los parámetros se guardaba en una base de datos relacional para tenerlo registrado. Tanto la temperatura como la humedad se registraban cada hora mientras que la activación de riego se registraba al finalizar, guardando tanto la fecha como el tiempo activo."
+
+
 
 }
